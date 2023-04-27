@@ -14,44 +14,14 @@ export default function MainComponent () {
     setScrool(window.scrollY || document.documentElement.scrollTop);
     setFontColor(window.scrollY || document.documentElement.scrollTop);
   }
-  const onClickHome=()=>{
-    window.scrollTo({
-      top: 0,
-      behavior : 'smooth'
-    })
+  const scrollToSection = (top) => {
+    window.scrollTo({top: top, behavior: 'smooth'});
   }
-  const onClickAboutMe=()=>{
-    console.log(window.scrollY || document.documentElement.scrollTop);
-    window.scrollTo({
-      top: 639,
-      behavior : 'smooth'
-    })
-  }
-  const onClickSkills=()=>{
-    window.scrollTo({
-      top: 2389,
-      behavior : 'smooth'
-    })
-    
-  }
-  const onClickProject=()=>{
-    window.scrollTo({
-      top: 3133,
-      behavior : 'smooth'
-    });
-  }
-  const onClickProject02=()=>{
-    window.scrollTo({
-      top: 3799,
-      behavior : 'smooth'
-    });
-  }
-  const onClickProject03=()=>{
-    window.scrollTo({
-      top: 4199,
-      behavior : 'smooth'
-    });
-  }
+  
+  const onClickNavItem = (e, top) => {
+    e.preventDefault();
+    scrollToSection(top);
+  };
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     window.scrollTo(0, 0);
@@ -82,17 +52,15 @@ export default function MainComponent () {
             <aside className="sec1-aside">
               <nav className='menu-bar'>
                 <ul className="main-title">
-                  <li><a href="#!" onClick={onClickHome}>Home</a></li>
-                  <li>
-                    <a href='#!' onClick={onClickAboutMe}>ABOUT ME</a>
-                  </li>
-                  <li><a href='#!' onClick={onClickSkills}>SKILLS</a></li>
-                  <li>
-                    <a href='#!' onClick={onClickProject}>PROJECT</a>
-                  </li>
+                  <li><a href="#!" onClick={(e) => onClickNavItem(e, 0)}>Home</a></li>
+                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 680)}>ABOUT ME</a></li>
+                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 2389)}>SKILLS</a></li>
+                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 3133)}>PROJECT</a></li>
                 </ul>
                 <ul className='github-email'>
-                  <li></li>
+                  <li><a href="mailto:kiik52.naver.com">kiik52.naver.com</a></li>
+                  <li><a href="https://github.com/Ji-Jung-Ho" target="_blank">github.com/Ji-Jung-Ho</a></li>
+                  <li><p>Last Update : 2023-04-27</p></li>
                 </ul>
               </nav>
             </aside>
@@ -101,7 +69,8 @@ export default function MainComponent () {
                 <img src="./img/main-bg.jfif" alt="" />
               </div>
               <div className="main-title">
-                <h2 className='info-name'>지정호</h2>
+                <h2 className='info'>상상을 구현하는걸 좋아하는</h2>
+                <h2 className='info-name'>지정호 <span>입니다.</span></h2>
                 <h2 className='info-subtitle'>프론트엔드 개발자가 되는게 첫번째 목표입니다.</h2>
                 <h2 className='info-text-motto'>: 긍정적인 마인드로 문제를 해결하자</h2>
               </div>
@@ -111,23 +80,23 @@ export default function MainComponent () {
           <aside className='sec2-aside'>
             <nav className='menu-bar'>
               <ul className="nav-main-title">
-                <li><a href="#!" onClick={onClickHome}>Home</a></li>
+                <li><a href="#!" onClick={(e) => onClickNavItem(e, 0)}>Home</a></li>
                 <button onClick={scrolltop}>스크롤값</button>
                 <li>
-                  <a href='#!' onClick={onClickAboutMe}>ABOUT ME</a>
+                  <a href='#!' onClick={(e) => onClickNavItem(e, 669)}>ABOUT ME</a>
                   <ul className="project-submenu">
                     <li><a href="#!">- 자기소개서</a></li>
                     <li><a href="#!">- Education</a></li>
                     <li><a href="#!">- Work experience</a></li>
                   </ul>
                 </li>
-                <li><a href='#!' onClick={onClickSkills}>SKILLS</a></li>
+                <li><a href='#!' onClick={(e) => onClickNavItem(e, 2389)}>SKILLS</a></li>
                 <li>
-                  <a href='#!' onClick={onClickProject}>PROJECT</a>
+                  <a href='#!' onClick={(e) => onClickNavItem(e, 3133)}>PROJECT</a>
                   <ul className="project-submenu">
-                    <li><a href="#!" onClick={onClickProject}>- Kurly Team Project</a></li>
-                    <li><a href="#!" onClick={onClickProject02}>- Kurly 개인 Porject</a></li>
-                    <li><a href="#!" onClick={onClickProject03}>- 나의 포트폴리오 개발</a></li>
+                    <li><a href="#!" onClick={(e) => onClickNavItem(e, 3133)}>- Kurly Team Project</a></li>
+                    <li><a href="#!" onClick={(e) => onClickNavItem(e, 3799)}>- Kurly 개인 Porject</a></li>
+                    <li><a href="#!" onClick={(e) => onClickNavItem(e, 4199)}>- 나의 포트폴리오 개발</a></li>
                   </ul>
                 </li>
               </ul>
@@ -167,7 +136,7 @@ export default function MainComponent () {
                   </div>
                 </div>
               </div>
-              <div className="about-me-row2">
+              {/* <div className="about-me-row2">
                 <div className="row2-left">
                   <div className="address">
                     <img src="./img/address.png" alt="name" />
@@ -195,7 +164,7 @@ export default function MainComponent () {
                       <p>010-5501-7918</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="education">
               <div className="edcation-main-title">
@@ -214,8 +183,9 @@ export default function MainComponent () {
                   <ul>
                     <li>- 2022.07.15 ~ 2023.02.13</li>
                     <li>- 메가스터디 IT에서 진행하는 프론트엔드 개발자 양성 교육 과정</li>
-                    <li>- 웹 프론트엔드 중심으로 백엔드의 기초와 함께 배우는 자기 주도형 교육 과정</li>
-                    <li>- HTML, CSS, JS, jQuety, React.js, TypeScript외 다수</li>
+                    <li>- 웹 프론트엔드 중심으로 백엔드의 기초와 함께 배우는 <span>자기 주도형 교육 과정</span></li>
+                    <li>- <span>HTML</span>, <span>CSS</span>, <span>JS</span>, <span>jQuety</span>, <span>React.js</span>, <span>TypeScript</span> 외 다수</li>
+                    {/* <li><img src="./img/academy-it.png" alt="" /></li> */}
                   </ul>
                 </div>
               </div>
@@ -225,11 +195,10 @@ export default function MainComponent () {
                 <h2>#Work-Experience</h2>
               </div>
               <div className="work-experience-content">
-                <h2>카카오게임즈 - 모바일 운영팀</h2>
-                <h3>2020.06.23 ~ 2022.06.21</h3>
+                <h1>카카오게임즈 - 모바일 운영팀 (2020.06.23 ~ 2022.06.21)</h1>
+                <h2>- 고객의 니즈를 파악하여 더 나은 환경에서 게임을 할 수 있도록 서비스를 제공</h2>
                 <ul> 
-                  <li><h2>주요업무</h2></li>
-                  <li>원활한 게임 환경을 제공하기 위해 유저 동향 실시간 모니터링</li>
+                  <li>원활한 게임 환경을 제공하기 위해 <span>유저 동향 실시간 모니터링</span></li>
                   <li>일일 데이터 관리 및 유저 관리</li>
                   <li>장애, 점검 히스토리 기록 및 게임 이슈 상황 수집</li>
                   <li>민감한 동향을 수집하여 그래프로 시각화</li>
