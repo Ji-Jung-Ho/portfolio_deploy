@@ -22,9 +22,9 @@
   flex-wrap: wrap;
   padding: 20px 0;
   height: 100%;
+  background-color: #202224;
 }
 #main #section1 .sec1-aside .menu-bar .main-title {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -33,15 +33,36 @@
   margin-top: 50px;
 }
 #main #section1 .sec1-aside .menu-bar .main-title > li {
-  text-align: center;
+  width: 100%;
   font-size: 40px;
 }
 #main #section1 .sec1-aside .menu-bar .main-title > li a {
+  position: relative;
+  display: block;
+  width: 100%;
   color: #fff;
+  padding: 10px;
+  border-radius: 15px;
+  z-index: 1;
+  transition: all 0.4s;
+}
+#main #section1 .sec1-aside .menu-bar .main-title > li a::after {
+  content: "";
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 15px;
+  transition: all 0.3s;
+  background-color: #8dbdee;
 }
 #main #section1 .sec1-aside .menu-bar .main-title > li a:hover {
-  text-decoration: underline;
-  text-underline-offset: 7px;
+  color: #222;
+}
+#main #section1 .sec1-aside .menu-bar .main-title > li a:hover::after {
+  width: 100%;
+  z-index: -1;
 }
 #main #section1 .sec1-aside .menu-bar .github-email {
   width: 100%;
@@ -66,7 +87,7 @@
   color: #fff;
 }
 #main #section1 .sec1-aside .menu-bar .github-email li a:hover {
-  color: rgba(255, 255, 255, 0.5);
+  color: #8dbdee;
 }
 #main #section1 .sec1-article {
   flex-grow: 0;
@@ -125,7 +146,7 @@
   justify-content: space-between;
   flex-direction: column;
   padding: 70px 0;
-  background-color: #202224;
+  background-color: #032431;
   position: sticky;
   top: 0;
 }
