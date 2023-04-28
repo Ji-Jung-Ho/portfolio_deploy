@@ -53,9 +53,9 @@ export default function MainComponent () {
               <nav className='menu-bar'>
                 <ul className="main-title">
                   <li><a href="#!" onClick={(e) => onClickNavItem(e, 0)}>Home</a></li>
-                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 680)}>ABOUT ME</a></li>
-                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 2389)}>SKILLS</a></li>
-                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 3133)}>PROJECT</a></li>
+                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 799)}>ABOUT ME</a></li>
+                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 3698)}>SKILLS</a></li>
+                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 4387)}>PROJECT</a></li>
                 </ul>
                 <ul className='github-email'>
                   <li><a href="mailto:kiik52.naver.com">kiik52.naver.com</a></li>
@@ -83,19 +83,19 @@ export default function MainComponent () {
                 <li><a href="#!" onClick={(e) => onClickNavItem(e, 0)}>Home</a></li>
                 <button onClick={scrolltop}>스크롤값</button>
                 <li>
-                  <a href='#!' onClick={(e) => onClickNavItem(e, 669)}>ABOUT ME</a>
+                  <a href='#!' onClick={(e) => onClickNavItem(e, 799)}>ABOUT ME</a>
                   <ul className="project-submenu">
                     <li><a href="#!">- 자기소개서</a></li>
                     <li><a href="#!">- Education</a></li>
                     <li><a href="#!">- Work experience</a></li>
                   </ul>
                 </li>
-                <li><a href='#!' onClick={(e) => onClickNavItem(e, 2389)}>SKILLS</a></li>
+                <li><a href='#!' onClick={(e) => onClickNavItem(e, 3698)}>SKILLS</a></li>
                 <li>
-                  <a href='#!' onClick={(e) => onClickNavItem(e, 3133)}>PROJECT</a>
+                  <a href='#!' onClick={(e) => onClickNavItem(e, 4387)}>PROJECT</a>
                   <ul className="project-submenu">
-                    <li><a href="#!" onClick={(e) => onClickNavItem(e, 3133)}>- Kurly Team Project</a></li>
-                    <li><a href="#!" onClick={(e) => onClickNavItem(e, 3799)}>- Kurly 개인 Porject</a></li>
+                    <li><a href="#!" onClick={(e) => onClickNavItem(e, 4387)}>- Kurly Team Project</a></li>
+                    <li><a href="#!" onClick={(e) => onClickNavItem(e, 4387)}>- Kurly 개인 Porject</a></li>
                     <li><a href="#!" onClick={(e) => onClickNavItem(e, 4199)}>- 나의 포트폴리오 개발</a></li>
                   </ul>
                 </li>
