@@ -8,20 +8,20 @@ export default function MainComponent () {
   const [collaborationTextui, setCollaborationTextUi] = React.useState(false);
 
   const [scroll, setScrool] = useState(0);
-  const [fontColor, setFontColor] = useState(true);
 
-  const onScroll=()=>{
+  // 스크롤 탑 값을 구하는 함수
+  const onScroll=()=>{  
     setScrool(window.scrollY || document.documentElement.scrollTop);
-    setFontColor(window.scrollY || document.documentElement.scrollTop);
   }
-  const scrollToSection = (top) => {
+  // 클릭한 메뉴로 부드럽게 이동
+  const scrollToContent = (top) => {
     window.scrollTo({top: top, behavior: 'smooth'});
   }
-  
-  const onClickNavItem = (e, top) => {
+  const onClickmenu = (e, top) => {
     e.preventDefault();
-    scrollToSection(top);
+    scrollToContent(top);
   };
+
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     window.scrollTo(0, 0);
@@ -40,6 +40,7 @@ export default function MainComponent () {
     setCollaborationTextUi (collaborationTextui => !collaborationTextui);
   }
 
+  // 스크롤 탑값을 구하기 위한 함수 추후 삭제 예정
   const scrolltop=()=>{
     var scrollPosition = window.scrollY || document.documentElement.scrollTop;
     console.log(scrollPosition);
@@ -52,10 +53,10 @@ export default function MainComponent () {
             <aside className="sec1-aside">
               <nav className='menu-bar'>
                 <ul className="main-title">
-                  <li><a href="#!" onClick={(e) => onClickNavItem(e, 0)}>Home</a></li>
-                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 799)}>ABOUT ME</a></li>
-                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 3698)}>SKILLS</a></li>
-                  <li><a href='#!' onClick={(e) => onClickNavItem(e, 4387)}>PROJECT</a></li>
+                  <li><a href="#!" onClick={(e) => onClickmenu(e, 0)}>Home</a></li>
+                  <li><a href='#!' onClick={(e) => onClickmenu(e, 799)}>ABOUT ME</a></li>
+                  <li><a href='#!' onClick={(e) => onClickmenu(e, 3698)}>SKILLS</a></li>
+                  <li><a href='#!' onClick={(e) => onClickmenu(e, 4387)}>PROJECT</a></li>
                 </ul>
                 <ul className='github-email'>
                   <li><a href="mailto:kiik52.naver.com">kiik52.naver.com</a></li>
@@ -76,28 +77,32 @@ export default function MainComponent () {
               </div>
             </article>
         </section>
-        <section id="section2" className='aboutme'>
+        <section id="section2" className='main-content'>
           <aside className='sec2-aside'>
             <nav className='menu-bar'>
               <ul className="nav-main-title">
-                <li><a href="#!" onClick={(e) => onClickNavItem(e, 0)}>Home</a></li>
+                <li><a href="#!" onClick={(e) => onClickmenu(e, 0)}>Home</a></li>
                 <button onClick={scrolltop}>스크롤값</button>
                 <li>
-                  <a href='#!' onClick={(e) => onClickNavItem(e, 799)}>ABOUT ME</a>
-                  <ul className="project-submenu">
-                    <li><a href="#!">- 자기소개서</a></li>
-                    <li><a href="#!">- Education</a></li>
-                    <li><a href="#!">- Work experience</a></li>
-                  </ul>
+                  <a href='#!' onClick={(e) => onClickmenu(e, 799)}>ABOUT ME</a>
+                  <div className="project-submenu">
+                    <ul>
+                      <li><a href="#!" onClick={(e) => onClickmenu(e, 958)}>- Education</a></li>
+                      <li><a href="#!" onClick={(e) => onClickmenu(e, 1708)}>- Work experience</a></li>
+                      <li><a href="#!" onClick={(e) => onClickmenu(e, 2508)}>- Self InterView</a></li>
+                    </ul>
+                  </div>
                 </li>
-                <li><a href='#!' onClick={(e) => onClickNavItem(e, 3698)}>SKILLS</a></li>
+                <li><a href='#!' onClick={(e) => onClickmenu(e, 3698)}>SKILLS</a></li>
                 <li>
-                  <a href='#!' onClick={(e) => onClickNavItem(e, 4387)}>PROJECT</a>
-                  <ul className="project-submenu">
-                    <li><a href="#!" onClick={(e) => onClickNavItem(e, 4387)}>- Kurly Team Project</a></li>
-                    <li><a href="#!" onClick={(e) => onClickNavItem(e, 4387)}>- Kurly 개인 Porject</a></li>
-                    <li><a href="#!" onClick={(e) => onClickNavItem(e, 4199)}>- 나의 포트폴리오 개발</a></li>
-                  </ul>
+                  <a href='#!' onClick={(e) => onClickmenu(e, 4387)}>PROJECT</a>
+                  <div className='project-submenu'>
+                    <ul>
+                      <li><a href="#!" onClick={(e) => onClickmenu(e, 4387)}>- Kurly Team Project</a></li>
+                      <li><a href="#!" onClick={(e) => onClickmenu(e, 5087)}>- Kurly 개인 Porject</a></li>
+                      <li><a href="#!" onClick={(e) => onClickmenu(e, 5613)}>- 나의 포트폴리오 개발</a></li>
+                    </ul>
+                  </div>
                 </li>
               </ul>
             </nav>
@@ -362,39 +367,39 @@ export default function MainComponent () {
             <div className="project-content">
               <div className="content-01">
                 <div className="content-title">
-                  <h2>1. MarKet-Kurly Project (팀)</h2>
+                  <h2>MarKet-Kurly Project (팀)</h2>
                 </div>
                 <div className="project-info-01">
                   <img src="./img/kurly-jquery.png" alt="" />
                   <div className="info">
-                    <p>마켓컬리 홈페이지 클론 코딩입니다. Node서버 기반으로 HTML, CSS, JavaScript, jQuery를 사용하여 개발하였으며, 스터디를 구성하여 팀 프로젝트로 마켓컬리의 상품페이지와 회원가입 페이지를 구현했습니다.</p>
+                    <p>마켓컬리 홈페이지 클론 코딩입니다. <span>Node서버 기반으로 HTML, CSS, JavaScript, jQuery를 사용하여 개발</span>하였으며, 스터디를 구성하여 팀 프로젝트로 마켓컬리의 상품페이지와 회원가입 페이지를 구현했습니다.</p>
                     <div className="development-info">
                       <div className='detail'>
-                        <p className='left-p'>개발 기간</p>
+                        <p className='left-p'><span>🔺</span>개발 기간</p>
                         <p className='right-p'>2022-12 ~ 2023-01</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>개발 인원</p>
+                        <p className='left-p'><span>🔺</span>개발 인원</p>
                         <p className='right-p'>3명</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>Frontend</p>
+                        <p className='left-p'><span>🔺</span>Frontend</p>
                         <p className='right-p'>HTML,&nbsp;CSS,&nbsp;javascript,&nbsp;jQuery</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>Backend</p>
+                        <p className='left-p'><span>🔺</span>Backend</p>
                         <p className='right-p'>PHP,&nbsp;Node.js</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>DB</p>
+                        <p className='left-p'><span>🔺</span>DB</p>
                         <p className='right-p'>MySQL</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>URL</p>
+                        <p className='left-p'><span>🔺</span>URL</p>
                         <p className='right-p'><a href='https://kiik52.com/kurly' target='_blank' rel='noopener noreferrer'>홈페이지 바로가기</a></p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>배포</p>
+                        <p className='left-p'><span>🔺</span>배포</p>
                         <p className='right-p'>닷홈 웹 호스팅을 사용한 홈페이지 배포</p>
                       </div>
                     </div>
@@ -405,112 +410,108 @@ export default function MainComponent () {
                   자세히보기
                   </button>
                 </Link>
-                <button onClick={scrolltop}>스크롤값</button>
               </div>
               <div className="content-02">
                 <div className="content-title">
-                  <h2>1. MarKet-Kurly Project (개인)</h2>
+                  <h2>MarKet-Kurly Project (개인)</h2>
                 </div>
                 <div className="project-info-02">
                   <img src="./img/kurly-react.png" alt="" />
                   <div className="info">
-                    <p>마켓컬리 홈페이지 클론 코딩입니다. Node서버 기반으로 HTML, CSS, JavaScript, jQuery, React를 사용하여 개발하였으며, 팀 프로젝트로 만든 마켓컬리를 React를 사용하여 다시 만든 프로젝트입니다. </p>
+                    <p>마켓컬리 홈페이지 클론 코딩입니다. <span className='color'>Node서버 기반으로 HTML, CSS, JavaScript, jQuery, React를 사용하여 개발</span>하였으며, <span className='underscore'>팀 프로젝트로 만든 마켓컬리를 React를 사용하여 다시 만든 프로젝트</span>입니다. </p>
                     <div className="development-info">
                       <div className='detail'>
-                        <p className='left-p'>개발 기간</p>
+                        <p className='left-p'><span>🔺</span>개발 기간</p>
                         <p className='right-p'>2022-01 ~ 2023-04</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>개발 인원</p>
+                        <p className='left-p'><span>🔺</span>개발 인원</p>
                         <p className='right-p'>1명</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>Frontend</p>
+                        <p className='left-p'><span>🔺</span>Frontend</p>
                         <p className='right-p'>HTML,&nbsp;CSS,&nbsp;javascript,&nbsp;jQuery&nbsp;React</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>Backend</p>
+                        <p className='left-p'><span>🔺</span>Backend</p>
                         <p className='right-p'>PHP,&nbsp;Node.js</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>DB</p>
+                        <p className='left-p'><span>🔺</span>DB</p>
                         <p className='right-p'>MySQL</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>URL</p>
+                        <p className='left-p'><span>🔺</span>URL</p>
                         <p className='right-p'><a href='https://ji-jung-ho.github.io/kurly_react_230419/' target='_blank' rel='noopener noreferrer'>홈페이지 바로가기</a></p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>배포</p>
+                        <p className='left-p'><span>🔺</span>배포</p>
                         <p className='right-p'>개인 도메인을 사용하여 GitHub 홈페이지 배포</p>
                       </div>
                     </div>
                   </div>
                   
                 </div>
-                <button className='view-detail-btn'>
+                <Link to="/project02">
+                  <button className='view-detail-btn'>
                     자세히보기
-                </button>
+                  </button>
+                </Link>
               </div>
               <div className="content-03">
                 <div className="content-title">
-                  <h2>1. My Page Project</h2>
+                  <h2>My Page Project</h2>
                 </div>
                 <div className="project-info-03">
                   <img src="./img/mypage.png" alt="" />
                   <div className="info">
-                    <p></p>
+                    <p>React를 사용한 포트폴리오 홈페이지 입니다. 저에 대한 간단한 설명과 보유스킬 및 지금까지 진행했던 포트폴리오를 소개하는 홈페이지 입니다.</p>
                     <div className="development-info">
                       <div className='detail'>
-                        <p className='left-p'>개발 기간</p>
+                        <p className='left-p'><span>🔺</span>개발 기간</p>
                         <p className='right-p'>2022-04 ~ 2023-04</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>개발 인원</p>
+                        <p className='left-p'><span>🔺</span>개발 인원</p>
                         <p className='right-p'>1명</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>Frontend</p>
+                        <p className='left-p'><span>🔺</span>Frontend</p>
                         <p className='right-p'>HTML,&nbsp;CSS,&nbsp;javascript,&nbsp;React</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>Backend</p>
+                        <p className='left-p'><span>🔺</span>Backend</p>
                         <p className='right-p'>Node.js</p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>URL</p>
+                        <p className='left-p'><span>🔺</span>URL</p>
                         <p className='right-p'><a href='https://kiik52.com/kurly' target='_blank' rel='noopener noreferrer'>홈페이지 바로가기</a></p>
                       </div>
                       <div className='detail'>
-                        <p className='left-p'>배포</p>
-                        <p className='right-p'>닷홈 웹 호스팅을 사용한 홈페이지 배포</p>
+                        <p className='left-p'><span>🔺</span>배포</p>
+                        <p className='right-p'>GitHub 홈페이지 배포</p>
                       </div>
                     </div>
                   </div>
                   
                 </div>
-                <button className='view-detail-btn'>
+                <Link to='project03'>
+                  <button className='view-detail-btn'>
                     자세히보기
-                </button>
+                  </button>
+                </Link>
               </div>
             </div>
+            
           </article>
         </section>
-        {/* <section id="section3" className="self-introduce">
+        <div className="footer">
+          <h2>Copyright © JungHo Ji. All rights reserved.</h2>
+        </div>
+        
+        {/* <section id="section3">
           <div className="sec3-container">
-            <div className="self-introduce-box">
-              
-            </div>
-          </div>
-        </section>
-        <section id="section4" className='skill'>
-          <div className="sec4-container">
-            
-          </div>
-        </section>
-        <section id="section5" className='project'>
-          <div className="sec5-container">
-            
+            <h2>Copyright © JungHo Ji. All rights reserved</h2>
           </div>
         </section> */}
       </main>

@@ -1,4 +1,4 @@
-#project01 {
+#project02 {
   width: 100%;
   #header {
     width: 100%;
@@ -14,6 +14,7 @@
       margin: 0 auto;
       display: flex;
       width: 100%;
+      position: relative;
       .back-btn {
         width: 100%;
         display: flex;
@@ -27,20 +28,23 @@
           }
         }
       }
-      .center {
-        text-align: center;
-      }
     }
     &.on {
-      background-color: rgba(255,255,255,0.5);
+      border: 0;
     }
   }
-  .project01-main {
+  .project02-main {
     width: 100%;
-    padding-top: 80px;
+    padding-top: 70px;
+    background:url(../../../img/kurly_banner.jpg) no-repeat 50% 50%;
+    background-size: cover;
     .container {
       width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
+      border-radius: 5px;
+      background-color: #fff;
+      opacity: 0.9;
       .main-title {
         width: 100%;
         display: flex;
@@ -54,8 +58,9 @@
         h2 {
           font-size: 32px;
           strong {
-            color: rgb(207, 103, 242);
+            color: #5f0080;
             font-size: 32px;
+            font-weight: 700;
           }
         }
       }
@@ -71,18 +76,34 @@
             font-weight: 700;
             padding: 10px 0;
           }
+          p.explanation {
+            line-height: 200%;
+            font-size: 20px;
+            padding: 20px 0 20px 20px;
+          }
           p {
             line-height: 200%;
-            margin: 10px 0;
             font-size: 20px;
+            padding-left: 20px;
             strong {
-              color: rgb(207, 103, 242);
+              color: #5f0080;
               font-size: 20px;
+              font-weight: 700;
+              text-decoration: underline;
+              text-underline-position: under;
+            }
+            span {
+              background-color: #5f0080;
+              color: #fff;
+              border-radius: 3px;
+              padding: 5px;
             }
           }
           ul {
             width: 100%;
             margin: 10px 0 10px 20px;
+            padding: 0 0 0 20px;
+            line-height: 200%;
             li {
               list-style: auto;
               font-size: 20px;
@@ -94,24 +115,47 @@
           width: 100%;
           padding: 10px 0 20px 0;
           border-bottom: 1px solid #fff;
-          h2 {
+          h2.main-title {
             font-size: 30px;
             font-weight: 700;
             padding: 10px 0 20px 0;
           }
+          .sub-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 20px 0;
+            padding-left: 20px;
+            span {
+              background-color: #600080;
+              color: #fff;
+              border-radius: 3px;
+              padding: 5px;
+            }
+          }
           ul {
             width: 100%;
             margin: 10px 0 10px 20px;
+            line-height: 200%;
             li {
               font-size: 20px;
-              list-style: disc;
-              margin: 10px 0;
+              margin: 20px 0;
+              img {
+                width: 10px;
+                margin-right: 20px;
+              }
+              span {
+                background-color: #631a7b;
+                color: #fff;
+                font-weight: 700;
+                border-radius: 3px;
+                padding: 5px;
+              }
             }
           }
           p {
             line-height: 200%;
-            margin: 5px 0;
             font-size: 18px;
+            padding-left: 20px;
           }
         }
         .experience {
@@ -126,15 +170,25 @@
           .sub-title {
             font-size: 20px;
             font-weight: 700;
-            margin: 10px 0;
+            margin: 20px 0;
+            padding-left: 20px;
+            span {
+              background-color: #600080;
+              color: #fff;
+              border-radius: 3px;
+              padding: 5px;
+            }
           }
           p {
             line-height: 200%;
-            margin: 5px 0;
             font-size: 18px;
+            padding-left: 20px;
             strong {
-              color: rgb(207, 103, 242);
+              color: #5f0080;
               font-size: 18px;
+              font-weight: 700;
+              text-decoration: underline;
+              text-underline-position: under;
             }
           }
         }

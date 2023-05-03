@@ -1,7 +1,9 @@
 import React from 'react';
 import MainPageComponent from './MainPageComponent';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Project01Component from './projectDetail/Project01Component';
+import KurlyTeamProject from './projectComponent/KurlyTeamProject';
+import KurlyReactProject from './projectComponent/KurlyReactProject';
+import MyPortfolioProject from './projectComponent/MyPortfolioProject';
 
 export default function WrapComponent() {
 
@@ -12,7 +14,9 @@ export default function WrapComponent() {
           <Routes>
             {/* <Route path='/' element={<HeaderComponent/>}/> */}
             <Route path='/' element={<MainPageComponent/> }/>
-            <Route path='/project01' element={<Project01Component/> }/>
+            <Route path='/project01' element={<KurlyTeamProject/> }/>
+            <Route path='/project02' element={<KurlyReactProject/> }/>
+            <Route path='/project03' element={<MyPortfolioProject/> }/>
           </Routes>
         </BrowserRouter>
       }

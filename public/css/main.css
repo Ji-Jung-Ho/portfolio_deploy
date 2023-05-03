@@ -92,6 +92,7 @@
 #main #section1 .sec1-article {
   flex-grow: 0;
   flex-basis: 80%;
+  height: 100vh;
   position: relative;
   color: #fff;
 }
@@ -104,6 +105,7 @@
   height: 100vh;
   -o-object-fit: cover;
      object-fit: cover;
+  position: fixed;
 }
 #main #section1 .sec1-article .main-title {
   position: absolute;
@@ -169,26 +171,27 @@
 #main #section2 .sec2-aside .menu-bar .nav-main-title > li a {
   font-size: 30px;
   color: #fff;
+  font-weight: 700;
 }
 #main #section2 .sec2-aside .menu-bar .nav-main-title > li a:hover {
   text-decoration: underline;
   text-underline-offset: 7px;
 }
 #main #section2 .sec2-aside .menu-bar .nav-main-title > li .project-submenu {
-  display: flex;
   flex-direction: column;
 }
-#main #section2 .sec2-aside .menu-bar .nav-main-title > li .project-submenu li {
+#main #section2 .sec2-aside .menu-bar .nav-main-title > li .project-submenu ul li {
   padding: 25px 0;
 }
-#main #section2 .sec2-aside .menu-bar .nav-main-title > li .project-submenu li a {
+#main #section2 .sec2-aside .menu-bar .nav-main-title > li .project-submenu ul li a {
   font-size: 15px;
 }
 #main #section2 .sec2-article {
   flex-basis: 80%;
   flex-grow: 0;
   overflow: hidden;
-  padding: 40px;
+  padding: 40px 40px 0 40px;
+  background-color: #fff;
 }
 #main #section2 .sec2-article .main-title {
   width: 180px;
@@ -199,7 +202,7 @@
   position: absolute;
   top: -24px;
   left: 53%;
-  background-color: #f58338;
+  background-color: #8dbdee;
   border-radius: 20px;
 }
 #main #section2 .sec2-article .main-title h2 {
@@ -335,8 +338,10 @@
 }
 #main #section2 .sec2-article .education .education-content .education-academy ul li span {
   font-size: 20px;
-  background-color: #202b36;
-  color: #fff;
+  background-color: #8dbdee;
+  color: #000;
+  padding: 4px;
+  border-radius: 5px;
 }
 #main #section2 .sec2-article .work-experience {
   width: 100%;
@@ -398,24 +403,26 @@
   position: relative;
   display: flex;
   width: 100%;
+  padding: 50px 0;
 }
 #main #section2 .sec2-article .interview-box .row-1::after {
   content: "";
   position: absolute;
   width: 100%;
   height: 2px;
-  top: 108%;
+  top: 100%;
   background-color: #000;
 }
 #main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 {
   width: 50%;
+  padding: 0 10px;
 }
 #main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 .interview-0102 {
   display: block;
   width: 545px;
   height: 50px;
   margin: 0 0 10px 10px;
-  font-size: 30px;
+  font-size: 28px;
   color: #202224;
   font-weight: 700;
   text-decoration: underline;
@@ -427,20 +434,22 @@
 }
 #main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 .content-box {
   height: 400px;
-  padding: 0px 20px 0px 20px;
+  padding: 0px 20px;
   overflow-y: auto;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
 }
 #main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 .content-box::-webkit-scrollbar {
   width: 10px;
 }
 #main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 .content-box::-webkit-scrollbar-thumb {
   background: #424242;
+  border-radius: 10px;
 }
 #main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 .content-box .content {
   line-height: 200%;
   font-size: 20px;
-  background-color: #032431;
-  color: #fff;
+  color: #000;
 }
 #main #section2 .sec2-article .interview-box .row-2 {
   display: flex;
@@ -448,14 +457,15 @@
 }
 #main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 {
   width: 50%;
+  padding: 0 10px;
 }
 #main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 .interview-0304 {
   display: block;
   width: 545px;
   height: 50px;
-  margin: 70px 0 20px 20px;
-  font-size: 30px;
-  color: #87CEEB;
+  margin: 45px 0 10px 10px;
+  font-size: 28px;
+  color: #202224;
   font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 7px;
@@ -468,12 +478,15 @@
   height: 400px;
   padding: 10px 20px 0px 20px;
   overflow-y: auto;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;
 }
 #main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 .content-box::-webkit-scrollbar {
-  width: 15px;
+  width: 10px;
 }
 #main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 .content-box::-webkit-scrollbar-thumb {
   background: #424242;
+  border-radius: 10px;
 }
 #main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 .content-box .content {
   line-height: 200%;
@@ -488,7 +501,7 @@
   position: absolute;
   top: 52.5%;
   left: 53%;
-  background-color: #f58338;
+  background-color: #8dbdee;
   border-radius: 20px;
 }
 #main #section2 .sec2-article .skill-main-title h2 {
@@ -547,10 +560,11 @@
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  color: #fff;
 }
 #main #section2 .sec2-article .skill-content .content-box .click-ui-container .click-ui-content {
   width: 100%;
-  padding: 20px 10px 0 10px;
+  margin: 10px;
 }
 #main #section2 .sec2-article .skill-content .content-box .click-ui-container .click-ui-content h2 {
   font-size: 20px;
@@ -571,9 +585,9 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 65%;
+  top: 65.2%;
   left: 53%;
-  background-color: #f58338;
+  background-color: #8dbdee;
   border-radius: 20px;
 }
 #main #section2 .sec2-article .project-main-title h2 {
@@ -581,20 +595,25 @@
   font-weight: 700;
 }
 #main #section2 .sec2-article .project-content {
-  width: 100%;
-  padding: 70px 0;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
 }
 #main #section2 .sec2-article .project-content .content-01 {
   width: 100%;
-  padding: 0 0 25px 0;
-  border-bottom: 1px solid #000;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 50px;
 }
 #main #section2 .sec2-article .project-content .content-01 .content-title {
   width: 100%;
   padding-bottom: 30px;
 }
 #main #section2 .sec2-article .project-content .content-01 .content-title h2 {
-  font-size: 40px;
+  font-size: 50px;
+  font-weight: 700;
   text-align: center;
 }
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 {
@@ -618,6 +637,10 @@
   line-height: 150%;
   border-bottom: 1px solid #fff;
 }
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .info > p span {
+  background-color: #8dbdee;
+  color: #000;
+}
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 .info .development-info {
   width: 100%;
   padding: 20px 0 10px 0;
@@ -631,9 +654,16 @@
 }
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 .info .development-info .detail .left-p {
   width: 30%;
+  font-weight: 900;
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .info .development-info .detail .left-p span {
+  display: inline-block;
+  margin-right: 10px;
+  transform: rotate(90deg);
 }
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 .info .development-info .detail .right-p {
   width: 65%;
+  font-weight: 900;
 }
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 .info .development-info .detail .right-p a {
   color: rgb(242, 110, 110);
@@ -646,7 +676,7 @@
   left: 40%;
   width: 230px;
   height: 50px;
-  background-color: #000;
+  background-color: #333;
   border: 0;
   border-radius: 6px;
   color: #fff;
@@ -656,8 +686,11 @@
 }
 #main #section2 .sec2-article .project-content .content-02 {
   width: 100%;
-  padding: 25px 0 25px 0;
-  border-bottom: 1px solid #000;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 50px;
 }
 #main #section2 .sec2-article .project-content .content-02 .content-title {
   width: 100%;
@@ -665,6 +698,8 @@
 }
 #main #section2 .sec2-article .project-content .content-02 .content-title h2 {
   font-size: 40px;
+  font-size: 50px;
+  font-weight: 700;
   text-align: center;
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 {
@@ -688,6 +723,14 @@
   line-height: 150%;
   border-bottom: 1px solid #fff;
 }
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .info > p .color {
+  background-color: #8dbdee;
+  color: #000;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .info > p .underscore {
+  text-decoration: underline;
+  text-underline-position: from-font;
+}
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .info .development-info {
   width: 100%;
   padding: 20px 0 10px 0;
@@ -701,9 +744,16 @@
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .info .development-info .detail .left-p {
   width: 30%;
+  font-weight: 900;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .info .development-info .detail .left-p span {
+  display: inline-block;
+  margin-right: 10px;
+  transform: rotate(90deg);
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .info .development-info .detail .right-p {
   width: 65%;
+  font-weight: 900;
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .info .development-info .detail .right-p a {
   color: rgb(242, 110, 110);
@@ -716,7 +766,7 @@
   left: 40%;
   width: 230px;
   height: 50px;
-  background-color: #000;
+  background-color: #333;
   border: 0;
   border-radius: 6px;
   color: #fff;
@@ -726,8 +776,11 @@
 }
 #main #section2 .sec2-article .project-content .content-03 {
   width: 100%;
-  padding: 25px 0 25px 0;
-  border-bottom: 1px solid #000;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 10px;
 }
 #main #section2 .sec2-article .project-content .content-03 .content-title {
   width: 100%;
@@ -735,6 +788,8 @@
 }
 #main #section2 .sec2-article .project-content .content-03 .content-title h2 {
   font-size: 40px;
+  font-size: 50px;
+  font-weight: 700;
   text-align: center;
 }
 #main #section2 .sec2-article .project-content .content-03 .project-info-03 {
@@ -742,7 +797,7 @@
   display: flex;
   padding-bottom: 20px;
 }
-#main #section2 .sec2-article .project-content .content-03 .project-info-03 img {
+#main #section2 .sec2-article .project-content .content-03 .project-info-03 > img {
   width: 600px;
   margin: 20px 50px 0 0;
 }
@@ -771,9 +826,16 @@
 }
 #main #section2 .sec2-article .project-content .content-03 .project-info-03 .info .development-info .detail .left-p {
   width: 30%;
+  font-weight: 900;
+}
+#main #section2 .sec2-article .project-content .content-03 .project-info-03 .info .development-info .detail .left-p span {
+  display: inline-block;
+  margin-right: 10px;
+  transform: rotate(90deg);
 }
 #main #section2 .sec2-article .project-content .content-03 .project-info-03 .info .development-info .detail .right-p {
   width: 65%;
+  font-weight: 900;
 }
 #main #section2 .sec2-article .project-content .content-03 .project-info-03 .info .development-info .detail .right-p a {
   color: rgb(242, 110, 110);
@@ -786,11 +848,22 @@
   left: 40%;
   width: 230px;
   height: 50px;
-  background-color: #000;
+  background-color: #333;
   border: 0;
   border-radius: 6px;
   color: #fff;
   cursor: pointer;
   font-size: 20px;
   font-weight: 700;
+}
+#main .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 220px;
+  background-color: #fff;
+  position: relative;
+}
+#main .footer h2 {
+  font-size: 16px;
 }

@@ -1,0 +1,182 @@
+#project03 {
+  width: 100%;
+  #header {
+    width: 100%;
+    height: 70px;
+    transition: all 0.3s;
+    position: fixed;
+    z-index: 3;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    .container {
+      width: 100%;
+      max-width: 1400px;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      width: 100%;
+      position: relative;
+      .back-btn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        button {
+          border: 0;
+          cursor: pointer;
+          background: none;
+          img {
+            width: 50px;
+          }
+        }
+      }
+    }
+    &.on {
+      border: 0;
+    }
+  }
+  .project03-main {
+    width: 100%;
+    padding-top: 70px;
+    background:url(../../../img/kurly_banner.jpg) no-repeat 50% 50%;
+    background-size: cover;
+    .container {
+      width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      border-radius: 5px;
+      background-color: #fff;
+      opacity: 0.9;
+      .main-title {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #fff;
+        img {
+          width: 50px;
+          margin-right: 10px;
+        }
+        h2 {
+          font-size: 32px;
+          strong {
+            color: #5f0080;
+            font-size: 32px;
+            font-weight: 700;
+          }
+        }
+      }
+      .project-content {
+        width: 100%;
+        margin: 0 0 30px 0;
+        .project-info {
+          width: 100%;
+          padding: 10px 0;
+          border-bottom: 1px solid #fff;
+          h2 {
+            font-size: 30px;
+            font-weight: 700;
+            padding: 10px 0;
+          }
+          p {
+            line-height: 200%;
+            font-size: 20px;
+            padding-left: 20px;
+            strong {
+              color: #5f0080;
+              font-size: 20px;
+              font-weight: 700;
+              text-decoration: underline;
+              text-underline-position: under;
+            }
+            span {
+              background-color: #5f0080;
+              color: #fff;
+              border-radius: 3px;
+              padding: 5px;
+            }
+          }
+          ul {
+            width: 100%;
+            margin: 10px 0 10px 20px;
+            padding: 0 0 0 20px;
+            line-height: 200%;
+            li {
+              list-style: auto;
+              font-size: 20px;
+              margin: 10px 0;
+            }
+          }
+        }
+        .development-part {
+          width: 100%;
+          padding: 10px 0 20px 0;
+          border-bottom: 1px solid #fff;
+          h2 {
+            font-size: 30px;
+            font-weight: 700;
+            padding: 10px 0 20px 0;
+          }
+          
+          ul {
+            width: 100%;
+            margin: 10px 0 10px 20px;
+            line-height: 200%;
+            li {
+              font-size: 20px;
+              margin: 20px 0;
+              img {
+                width: 10px;
+                margin-right: 20px;
+              }
+              span {
+                background-color: #631a7b;
+                color: #fff;
+                font-weight: 700;
+                border-radius: 3px;
+                padding: 5px;
+              }
+            }
+          }
+          p {
+            line-height: 200%;
+            font-size: 18px;
+            padding-left: 20px;
+          }
+        }
+        .experience {
+          width: 100%;
+          padding: 10px 0 30px 0;
+          border-bottom: 1px solid #fff;
+          .experience-main-title {
+            font-size: 30px;
+            font-weight: 700;
+            padding: 10px 0 20px 0;
+          }
+          .sub-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 20px 0;
+            padding-left: 20px;
+            span {
+              background-color: #600080;
+              color: #fff;
+              border-radius: 3px;
+              padding: 5px;
+            }
+          }
+          p {
+            line-height: 200%;
+            font-size: 18px;
+            padding-left: 20px;
+            strong {
+              color: #5f0080;
+              font-size: 18px;
+              font-weight: 700;
+              text-decoration: underline;
+              text-underline-position: under;
+            }
+          }
+        }
+      }
+    }
+  }
+}

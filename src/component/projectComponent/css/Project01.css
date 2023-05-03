@@ -37,7 +37,7 @@
 #project01 .project01-main {
   width: 100%;
   padding-top: 70px;
-  background: url(../img/kurly_banner.jpg) no-repeat 50% 50%;
+  background: url(../../../img/kurly_banner.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 #project01 .project01-main .container {
