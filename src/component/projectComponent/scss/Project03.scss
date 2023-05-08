@@ -36,7 +36,7 @@
   .project03-main {
     width: 100%;
     padding-top: 70px;
-    background:url(../../../img/kurly_banner.jpg) no-repeat 50% 50%;
+    background:url(../../../img/KakaoTalk_20230504_164306022.jpg) no-repeat 50% 50%;
     background-size: cover;
     .container {
       width: 1200px;
@@ -57,11 +57,7 @@
         }
         h2 {
           font-size: 32px;
-          strong {
-            color: #5f0080;
-            font-size: 32px;
-            font-weight: 700;
-          }
+          font-weight: 700;
         }
       }
       .project-content {
@@ -76,22 +72,21 @@
             font-weight: 700;
             padding: 10px 0;
           }
+          p.explanation {
+            line-height: 200%;
+            font-size: 20px;
+            padding: 20px 0 20px 20px;
+          }
           p {
             line-height: 200%;
             font-size: 20px;
             padding-left: 20px;
-            strong {
-              color: #5f0080;
-              font-size: 20px;
-              font-weight: 700;
-              text-decoration: underline;
-              text-underline-position: under;
-            }
             span {
-              background-color: #5f0080;
-              color: #fff;
+              background-color: #8dbdee;
+              color: #000;
               border-radius: 3px;
               padding: 5px;
+              font-weight: 700;
             }
           }
           ul {
@@ -110,12 +105,23 @@
           width: 100%;
           padding: 10px 0 20px 0;
           border-bottom: 1px solid #fff;
-          h2 {
+          h2.main-title {
             font-size: 30px;
             font-weight: 700;
             padding: 10px 0 20px 0;
           }
-          
+          .sub-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin: 20px 0;
+            padding-left: 20px;
+            span {
+              background-color: #8dbdee;
+              color: #000;
+              border-radius: 3px;
+              padding: 5px;
+            }
+          }
           ul {
             width: 100%;
             margin: 10px 0 10px 20px;

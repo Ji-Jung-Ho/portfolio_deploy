@@ -37,7 +37,7 @@
 #project03 .project03-main {
   width: 100%;
   padding-top: 70px;
-  background: url(../../../img/kurly_banner.jpg) no-repeat 50% 50%;
+  background: url(../../../img/KakaoTalk_20230504_164306022.jpg) no-repeat 50% 50%;
   background-size: cover;
 }
 #project03 .project03-main .container {
@@ -61,10 +61,6 @@
 }
 #project03 .project03-main .container .main-title h2 {
   font-size: 32px;
-}
-#project03 .project03-main .container .main-title h2 strong {
-  color: #5f0080;
-  font-size: 32px;
   font-weight: 700;
 }
 #project03 .project03-main .container .project-content {
@@ -81,23 +77,22 @@
   font-weight: 700;
   padding: 10px 0;
 }
+#project03 .project03-main .container .project-content .project-info p.explanation {
+  line-height: 200%;
+  font-size: 20px;
+  padding: 20px 0 20px 20px;
+}
 #project03 .project03-main .container .project-content .project-info p {
   line-height: 200%;
   font-size: 20px;
   padding-left: 20px;
 }
-#project03 .project03-main .container .project-content .project-info p strong {
-  color: #5f0080;
-  font-size: 20px;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-position: under;
-}
 #project03 .project03-main .container .project-content .project-info p span {
-  background-color: #5f0080;
-  color: #fff;
+  background-color: #8dbdee;
+  color: #000;
   border-radius: 3px;
   padding: 5px;
+  font-weight: 700;
 }
 #project03 .project03-main .container .project-content .project-info ul {
   width: 100%;
@@ -115,10 +110,22 @@
   padding: 10px 0 20px 0;
   border-bottom: 1px solid #fff;
 }
-#project03 .project03-main .container .project-content .development-part h2 {
+#project03 .project03-main .container .project-content .development-part h2.main-title {
   font-size: 30px;
   font-weight: 700;
   padding: 10px 0 20px 0;
+}
+#project03 .project03-main .container .project-content .development-part .sub-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 20px 0;
+  padding-left: 20px;
+}
+#project03 .project03-main .container .project-content .development-part .sub-title span {
+  background-color: #8dbdee;
+  color: #000;
+  border-radius: 3px;
+  padding: 5px;
 }
 #project03 .project03-main .container .project-content .development-part ul {
   width: 100%;

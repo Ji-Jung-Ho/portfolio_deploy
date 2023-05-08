@@ -77,7 +77,7 @@ export default function Project02Component () {
                 useNavigate으로 회원가입 페이지에서 데이터 입력 후 '가입하기' 클릭 시 데이터 전송과 동시에 intro.main으로 
                 페이지가 전환되도록 구현했습니다.
               </p>
-              <h2 className='sub-title'><span>회원가입 페이지 기능 구현</span></h2>
+              <h2 className='sub-title'><span>회원가입 페이지 추가 기능 구현</span></h2>
               <p>
                 ConfirmModal 팝업창을 만들어서 회원가입 페이지에서 '중복확인', 휴대폰 '인증번호 받기' 클릭 시 모달에 메시지를 추가하여 팝업창을 확인할 수 있게 구현했습니다.
                 같은 방식으로 한번 더 배운걸 반복하기 위해 이용약관동의 '약관보기'도 모달이 출력되게 구현했습니다. <br />

@@ -72,7 +72,7 @@ export default function KurlyTeamProject () {
             </div>
             <div className="experience">
               <h2 className='experience-main-title'>❗성장 경험</h2>
-              <h2 className='sub-title'><span>HTML, CSS로 홈페이지 구성과 디자인 이해</span></h2>
+              <h2 className='sub-title'><span>HTML, CSS로 쇼핑몰 웹페이지 구성과 디자인 이해</span></h2>
               <p>
                 <strong>마켓컬리</strong> 홈페이지는 클론 코딩이여서 기획을 많이 하지는 않았지만, 쇼핑몰 홈페이지의 기본적인 구성을 알게되었습니다.<br />
                 Sass를 사용하여 또한 같은 기능을 구현해도 jQuery로 JavaScirpt보다 쉽고 간결하게 만들었고 코드의 양도 줄었습니다.

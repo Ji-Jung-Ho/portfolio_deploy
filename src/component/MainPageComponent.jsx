@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import  { Link } from 'react-router-dom';
+import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperCore, { Navigation, Pagination } from "swiper";
+import 'swiper/swiper-bundle.css';
+
+SwiperCore.use([Navigation, Pagination])
 
 export default function MainComponent () {
-  const [frontendTextUi, setFrontendTextUi] = React.useState(false);
-  const [backendTextui, setBackendTextUi] = React.useState(false);
-  const [dbTextui, setDbTextUi] = React.useState(false);
-  const [collaborationTextui, setCollaborationTextUi] = React.useState(false);
+  const [frontendTextUi, setFrontendTextUi] = useState(false);
+  const [backendTextui, setBackendTextUi] = useState(false);
+  const [dbTextui, setDbTextUi] = useState(false);
+  const [collaborationTextui, setCollaborationTextUi] = useState(false);
 
   const [scroll, setScrool] = useState(0);
 
@@ -22,6 +27,7 @@ export default function MainComponent () {
     scrollToContent(top);
   };
 
+  // 컴포넌트가 실행될때 최초 한번만 실행 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     window.scrollTo(0, 0);
@@ -42,9 +48,10 @@ export default function MainComponent () {
 
   // 스크롤 탑값을 구하기 위한 함수 추후 삭제 예정
   const scrolltop=()=>{
-    var scrollPosition = window.scrollY || document.documentElement.scrollTop;
+    let scrollPosition = window.scrollY || document.documentElement.scrollTop;
     console.log(scrollPosition);
   }
+
 
   return (
     <>
@@ -67,8 +74,7 @@ export default function MainComponent () {
             </aside>
             <article className="sec1-article">
               <div className="img-box">
-                <img src="./img/main-bg.jfif" alt="" />
-              </div>
+                </div>
               <div className="main-title">
                 <h2 className='info'>상상을 구현하는걸 좋아하는</h2>
                 <h2 className='info-name'>지정호 <span>입니다.</span></h2>
@@ -109,10 +115,10 @@ export default function MainComponent () {
           </aside>
           <article className='sec2-article'>
             <div className="main-title">
-              <h2>About Me</h2>
+              <h2>ABOUT ME</h2>
             </div>
             <div className="about-row-box">
-              <div className="about-me-row1">
+              <div className="about-me">
                 <div className="row1-left">
                   <div className="name">
                     <img src="./img/user-info.png" alt="name" />
@@ -141,35 +147,6 @@ export default function MainComponent () {
                   </div>
                 </div>
               </div>
-              {/* <div className="about-me-row2">
-                <div className="row2-left">
-                  <div className="address">
-                    <img src="./img/address.png" alt="name" />
-                    <h2>주소</h2>
-                  </div>
-                  <div className="detail">
-                      <p>경기도 광주시 현산로 99</p>
-                  </div>
-                </div>
-                <div className="row2-center">
-                  <div className="email">
-                    <img src="./img/email.png" alt="name" />
-                    <h2>이메일</h2>
-                  </div>
-                  <div className="detail">
-                      <p>kiik52@naver.com</p>
-                  </div>
-                </div>
-                <div className="row2-right">
-                <div className="github">
-                    <img src="./img/github_icon-icons.com_62793.png" alt="GithubImg" />
-                    <h2>깃허브</h2>
-                  </div>
-                  <div className="detail">
-                      <p>010-5501-7918</p>
-                  </div>
-                </div>
-              </div> */}
             </div>
             <div className="education">
               <div className="edcation-main-title">
@@ -190,27 +167,26 @@ export default function MainComponent () {
                     <li>- 메가스터디 IT에서 진행하는 프론트엔드 개발자 양성 교육 과정</li>
                     <li>- 웹 프론트엔드 중심으로 백엔드의 기초와 함께 배우는 <span>자기 주도형 교육 과정</span></li>
                     <li>- <span>HTML</span>, <span>CSS</span>, <span>JS</span>, <span>jQuety</span>, <span>React.js</span>, <span>TypeScript</span> 외 다수</li>
-                    {/* <li><img src="./img/academy-it.png" alt="" /></li> */}
                   </ul>
                 </div>
               </div>
             </div>
             <div className="work-experience">
               <div className="work-experience-main-title">
-                <h2>#Work-Experience</h2>
+                <h2>#WORK-EXPERIENCE</h2>
               </div>
               <div className="work-experience-content">
                 <h1>카카오게임즈 - 모바일 운영팀 (2020.06.23 ~ 2022.06.21)</h1>
-                <h2>- 고객의 니즈를 파악하여 더 나은 환경에서 게임을 할 수 있도록 서비스를 제공</h2>
+                <h2>- 게임에 대한 유저의 니즈를 파악하여 더 나은 환경에서 게임을 할 수 있도록 서비스를 제공</h2>
                 <ul> 
                   <li>원활한 게임 환경을 제공하기 위해 <span>유저 동향 실시간 모니터링</span></li>
                   <li>일일 데이터 관리 및 유저 관리</li>
                   <li>장애, 점검 히스토리 기록 및 게임 이슈 상황 수집</li>
-                  <li>민감한 동향을 수집하여 그래프로 시각화</li>
-                  <li>불법 프로그램 사용자 제제 및 공식카페 악질 댓글 유저 제제</li>
+                  <li>민감한 동향, 이슈사항을 수집하여 그래프로 시각화</li>
+                  <li>불법 프로그램 사용자 제제 및 공식카페 악성 댓글 유저 제제</li>
                   <li>아이템 및 골드 현거래 일일 거래량 조사</li>
-                  <li>이벤트 체크리스트 작성</li>
-                  <li>정상적인 게임 점검 확인 및 내·외부망 게임 접속 확인</li>
+                  <li>이벤트 체크리스트 작성 및 기록</li>
+                  <li>정상적인 게임 점검 확인 및 내·외부망에서의 게임 접속 확인</li>
                   <li>클린한 공식카페를 위한 불건전 게시글, 광고성 게시글, 댓글 삭제</li>
                   <li>이벤트 및 점검 공지사항 작성</li>
                   <li>공식 카페 활성화를 위한 게시글 댓글 기획안 작성</li>
@@ -218,7 +194,7 @@ export default function MainComponent () {
               </div>
             </div>
             <div className="interview-main-title">
-              <h1>#Self InterView</h1>
+              <h1>#SELF INTERVIEW</h1>
             </div>
             <div className="interview-box">
               <div className="row-1">
@@ -226,9 +202,9 @@ export default function MainComponent () {
                   <h2 className="interview-0102"><img src="./img/q.png" alt="" />개발자가 되고 싶은 이유</h2>
                   <div className="content-box">
                     <p className='content'>
-                      10년뒤의 제 모습을 떠올렸을때 지금보다 열정이 좀 식어있을지라도 여전히 타오르는 모습이기를 원했습니다.  그러려면 이 각박한 세상속에서 도태되지 않아야 하고,
-                      저 스스로의 발전과 그 발전을 뒷받침해줄 노력만이 정답이라고 생각했습니다. <br/><br/> 이런 생각을 하던 중 우연한 계기로 프론트엔드를 알게되었고, '사용자가 가장 먼저 보는곳' 이라는 프론트엔드 업무에 흥미를 느꼈고,
-                      이후 지속적으로 관심을 가지게 되었습니다. <br/> 가장 큰 흥미를 느낀건 내가 상상해왔던 것들을 눈에 보이게 만들수 있고, 정적인 페이지를 동적인 페이지로 바꾸는 방법을 알아가는게 너무 재미있었습니다. 개발이야말로
+                      10년뒤의 제 모습을 떠올렸을때 지금보다 열정이 좀 식어있을지라도 여전히 타오르는 모습이기를 원했습니다. 그러기 위해서 현재 상황에 안주하지 않고,
+                      도태되지 않기 위한 발전과 그 발전을 뒷받침해줄 노력만이 정답이라고 생각했습니다. <br/><br/> 이런 생각을 하던 중 우연한 계기로 프론트엔드를 알게되었고, '사용자가 가장 먼저 보는곳' 이라는 프론트엔드 업무에 흥미를 느꼈고,
+                      이후 지속적으로 관심을 가지게 되었습니다. <br/> 가장 큰 흥미를 느낀건 내가 상상해왔던 것들을 눈에 보이게 만들수 있고, 정적인 페이지를 구현하고, 동적인 기능을 추가하면서 웹 페이지를 만드는 방법을 알아가는게 너무 재미있었습니다. 개발이야말로
                       무한한 발전 가능성을 보았고, 꾸준한 노력을 통해 저의 미래를 현재보다 빛나게 할 수 있는 일이란걸 확신했습니다. 이러한 이유로 개발자를 목표로 제 2의 인생을 시작하게 되었습니다.
                     </p>
                   </div>
@@ -237,10 +213,10 @@ export default function MainComponent () {
                   <h2 className="interview-0102"><img src="./img/q.png" alt="" />개발자가 되기 위한 노력</h2>
                   <div className="content-box">
                     <p className='content'>
-                      회사를 그만 두기 전에는 쉬는날마다 HTML, CSS, JavaScript에 대한 인터넷 강의를 수강했고, 서점에서 웹 개발자에 대한 책을 사서 공부를 했습니다. 하지만 쉬는날에만
-                      공부하기에 웹개발에 빠져버린 저는 학원을 다니기 위해 회사를 그만두었습니다. <br/><br/> 학원에선 웹개발의 심화과정을 배웠으며 부족한 부분들은 강사님께 질문을 하거나 개발 커뮤니티, 인터넷 검색, 유튜브 등을 통해  
+                      회사를 그만 두기 전에는 쉬는날에도 프론트엔드에 관한 내용을 찾아보거나 HTML, CSS, JavaScript에 대한 인터넷 강의를 수강했고, 서점에서 웹 개발자에 대한 책을 사서 공부를 했습니다. 그러던중 웹 개발에 대해
+                      전문적으로 배우고 싶다는 생각을 했고, 이 후 회사를 그만두고 학원 수강을 했습니다. <br/><br/> 학원에선 웹개발의 심화과정을 배웠으며 부족한 부분들은 강사님께 질문을 하거나 개발 커뮤니티, 인터넷 검색, 유튜브 등을 통해  
                       하나씩 배워갔습니다. 코드를 외우려고 하지 않고 최대한 이해하려고 노력했으며, 이해가 되지 않는 부분은 쉬운 예시를 따로 만들면서 반복 작업을 했습니다. 이러한 과정에서 몇개의
-                      홈페이지를 제작했으며, 여러명이서 개발하는 경험도 느껴보고 싶어 스터디를 구성해서 팀 프로젝트를 개발했습니다. <br/><br/>
+                      홈페이지를 제작했으며, 여러명이서 개발하는 경험도 느껴보고 싶어 직접 스터디를 구성해서 팀 프로젝트를 개발했습니다. <br/><br/>
                       많은 사람들이 요즘은 개발하기 쉬워졌다고 말하지만 저는 반은 맞고 반은 틀리다고 생각합니다. 개발하는데 도움을 주는 영상 및 교재가 잘되있는건 사실이지만, 중요한건 본인이 개발에 대한 노력과 열정의 크기라고 생각합니다.
                       그렇기에 저는 오늘도 개발자가 되기 위해 노력하고 있습니다.
                     </p>
@@ -253,9 +229,9 @@ export default function MainComponent () {
                   <div className="content-box">
                     <p className='content'>
                     개발자에게 커뮤니케이션과 협업 능력은 필수라고 생각합니다. 프론트엔드 업무를 하다보면 기획자, 디자이너, 백엔드 개발자와 기본적으로 소통을 하게 될텐데 의사소통이 제대로 이루어지지 않는다면 저뿐만 아니라 같이 협업하는 사람과 트러블이 발생할거라 생각합니다. <br/><br/>
-                    저는 이러한 트러블이 발생하는걸 조금이라도 줄일 수 있는 경험을 해왔습니다. <br /> 카카오게임즈 모바일 운영팀에 있을 때 교대 근무를 하기 전 근무했을때까지 각 게임별 크리티컬한 이슈에 대한 정리와 이후 유저들의 동향 및 주의깊게 봐야할 상황을 정리해 두어 다음 교대자에게 자세하게 전달해주었습니다.
+                    저는 이러한 트러블이 발생하는걸 조금이라도 줄일 수 있는 경험을 해왔습니다. 카카오게임즈 모바일 운영팀에 있을 때 근무 교대를 하기 전 근무했을때까지 각 게임별 크리티컬한 이슈에 대한 정리와 이후 유저들의 동향 및 주의깊게 봐야할 상황을 정리해 두어 다음 교대자에게 자세하게 전달해주었습니다.
                     이 행동으로 인해 다음 근무자는 훨씬 빨리 게임에 대한 이슈 사항들을 파악할 수 있었으며, 정리해놓은 중요 사항을 토대로 근무하여 해당 이슈 및 다른 이슈에 대해 즉각적인 반응을 할 수 있었습니다. <br/><br/> 그 외에 팀장님과의 1:1 면담을 통한 분석서 보고, 동료들과의 업무 메뉴얼을 리뉴얼 했던 경험 등 이 외에도 많은 사람들과의 능동적인 의사소통의 경험이 있습니다.
-                    능동적인 의사소통이 이번에 팀 프로젝트를 하면서 많은 도움이 되었습니다. 주도적으로 팀을 이끌었고, 각자의 의견을 조율하여 프로젝트가 끝나는 마지막까지 원활한 진행으로 유종의미를 거둘 수 있었습니다.
+                    능동적인 의사소통이 이번에 팀 프로젝트를 하면서 많은 도움이 되었습니다. 주도적으로 팀을 이끌었고, 각자의 의견을 조율하여 좋은 분위기로 프로젝트를 진행하다 보니 팀 프로젝트 이후 개인 프로젝트를 진행할때도 서로 도움을 주면서 진행할 수 있었습니다.
                     </p>
                   </div>
                 </div>
@@ -359,7 +335,10 @@ export default function MainComponent () {
                     </div>
                   </div>
                 </div>
-              </div>            
+              </div>
+              <div className="skill-msg">
+              <h2>❗화면을 클릭해 주세요!</h2>
+            </div>         
             </div>
             <div className="project-main-title">
               <h2>PROJECT</h2>
@@ -367,10 +346,31 @@ export default function MainComponent () {
             <div className="project-content">
               <div className="content-01">
                 <div className="content-title">
-                  <h2>MarKet-Kurly Project (팀)</h2>
+                  <h2>Kurly Project (팀)</h2>
                 </div>
                 <div className="project-info-01">
-                  <img src="./img/kurly-jquery.png" alt="" />
+                  <div className="slide-container">
+                    <Swiper
+                      autoplay={{
+                        delay: 100,
+                      }}
+                      pagination={{
+                        clickable: true
+                      }}
+                      navigation={true}
+                      className="mySwiper"
+                    >
+                      <SwiperSlide>
+                        <img src="./img/kurly-jquery.png" alt="slide1" />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <img src="./img/Untitled.png" alt="slide2" />
+                      </SwiperSlide>
+                      <SwiperSlide>
+                        <img src="./img/Untitled (2).png" alt="slide3" />
+                      </SwiperSlide>
+                    </Swiper>
+                  </div>
                   <div className="info">
                     <p>마켓컬리 홈페이지 클론 코딩입니다. <span>Node서버 기반으로 HTML, CSS, JavaScript, jQuery를 사용하여 개발</span>하였으며, 스터디를 구성하여 팀 프로젝트로 마켓컬리의 상품페이지와 회원가입 페이지를 구현했습니다.</p>
                     <div className="development-info">
@@ -413,7 +413,7 @@ export default function MainComponent () {
               </div>
               <div className="content-02">
                 <div className="content-title">
-                  <h2>MarKet-Kurly Project (개인)</h2>
+                  <h2>Kurly Project (개인)</h2>
                 </div>
                 <div className="project-info-02">
                   <img src="./img/kurly-react.png" alt="" />
@@ -460,7 +460,7 @@ export default function MainComponent () {
               </div>
               <div className="content-03">
                 <div className="content-title">
-                  <h2>My Page Project</h2>
+                  <h2>My Portfolio page Project</h2>
                 </div>
                 <div className="project-info-03">
                   <img src="./img/mypage.png" alt="" />
@@ -508,12 +508,6 @@ export default function MainComponent () {
         <div className="footer">
           <h2>Copyright © JungHo Ji. All rights reserved.</h2>
         </div>
-        
-        {/* <section id="section3">
-          <div className="sec3-container">
-            <h2>Copyright © JungHo Ji. All rights reserved</h2>
-          </div>
-        </section> */}
       </main>
     </>
   );
