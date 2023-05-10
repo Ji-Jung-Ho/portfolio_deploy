@@ -3,6 +3,7 @@ import  { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import 'swiper/swiper-bundle.css';
+import { Fade, Flip, Zoom  } from "react-reveal";
 
 SwiperCore.use([Navigation, Pagination])
 
@@ -52,13 +53,13 @@ export default function MainComponent () {
     console.log(scrollPosition);
   }
 
-
   return (
     <>
       <main id='main'>
         <section id='section1' className='intro'>
             <aside className="sec1-aside">
               <nav className='menu-bar'>
+              <Fade left duration={2000}>
                 <ul className="main-title">
                   <li><a href="#!" onClick={(e) => onClickmenu(e, 0)}>Home</a></li>
                   <li><a href='#!' onClick={(e) => onClickmenu(e, 799)}>ABOUT ME</a></li>
@@ -70,16 +71,28 @@ export default function MainComponent () {
                   <li><a href="https://github.com/Ji-Jung-Ho" target="_blank">github.com/Ji-Jung-Ho</a></li>
                   <li><p>Last Update : 2023-04-27</p></li>
                 </ul>
+              </Fade>
               </nav>
             </aside>
             <article className="sec1-article">
               <div className="img-box">
-                </div>
+              </div>
               <div className="main-title">
-                <h2 className='info'>상상을 구현하는걸 좋아하는</h2>
-                <h2 className='info-name'>지정호 <span>입니다.</span></h2>
-                <h2 className='info-subtitle'>프론트엔드 개발자가 되는게 첫번째 목표입니다.</h2>
-                <h2 className='info-text-motto'>: 긍정적인 마인드로 문제를 해결하자</h2>
+                <Fade top>
+                  <h2 className='info'>상상을 구현하는</h2>
+                </Fade>
+                <Flip top duration={2000} >
+                  <h2 className='info-name'>
+                    <span>지정호</span> 입니다.
+                  </h2>
+                </Flip>
+                <Fade bottom duration={2000}>
+                  <div className='info-subtitle'>
+                    <span>프론트앤드 개발자를 목표로 노력하고 있습니다.</span>
+                    <span>부족한 부분을 하나씩 채워가는 재미를 즐깁니다.</span>
+                    <span>: 인생을 긍정적으로 살아가자라는 좌우명을 가지고 있습니다.</span>
+                  </div>
+                </Fade>
               </div>
             </article>
         </section>
@@ -349,27 +362,37 @@ export default function MainComponent () {
                   <h2>Kurly Project (팀)</h2>
                 </div>
                 <div className="project-info-01">
-                  <div className="slide-container">
+                  <div className="swiper-container">
                     <Swiper
-                      autoplay={{
-                        delay: 100,
+                      pagination = {{
+                        el: '.swiper-pagination-01',
+                        clickable: true,
+                        bulletClass:"custom_bullet",
+                        bulletActiveClass: "swiper-pagination-custom-bullet-active",
+                        renderBullet: function (index, className) {
+                          return `<button class="${className}"><img src="./img/project01-img/kurly_jquery_preview_${index + 1}.png" alt="Page ${index + 1}" /></button>`;
+                        }}}
+                      navigation={{
+                        nextEl: '.next-btn',
+                        prevEl: '.prev-btn'
                       }}
-                      pagination={{
-                        clickable: true
-                      }}
-                      navigation={true}
-                      className="mySwiper"
+                      slidesPerView = {1}
+                      loop = {true}
                     >
-                      <SwiperSlide>
-                        <img src="./img/kurly-jquery.png" alt="slide1" />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img src="./img/Untitled.png" alt="slide2" />
-                      </SwiperSlide>
-                      <SwiperSlide>
-                        <img src="./img/Untitled (2).png" alt="slide3" />
-                      </SwiperSlide>
+                      <SwiperSlide><img src="./img/project01-img/kurly_jquery_preview_1.png" alt="kurly_jQuery_img1" /></SwiperSlide>
+                      <SwiperSlide><img src="./img/project01-img/kurly_jquery_preview_2.png" alt="kurly_jQuery_img2" /></SwiperSlide>
+                      <SwiperSlide><img src="./img/project01-img/kurly_jquery_preview_3.png" alt="kurly_jQuery_img3" /></SwiperSlide>
+                      <SwiperSlide><img src="./img/project01-img/kurly_jquery_preview_4.png" alt="kurly_jQuery_img4" /></SwiperSlide>
+                      <SwiperSlide><img src="./img/project01-img/kurly_jquery_preview_5.png" alt="kurly_jQuery_img5" /></SwiperSlide>
+                      <SwiperSlide><img src="./img/project01-img/kurly_jquery_preview_6.png" alt="kurly_jQuery_img6" /></SwiperSlide>
                     </Swiper>
+                    <button className="next-btn">
+                      <img src="./img/png-transparent-arrow-font-awesome-computer-icons-right-arrow-cdr-angle-hand.png" alt="" />
+                    </button>
+                    <button className="prev-btn">
+                      <img src="./img/free-icon-right-6364333.png" alt="" />
+                    </button>
+                    <div className="swiper-pagination-01"></div>
                   </div>
                   <div className="info">
                     <p>마켓컬리 홈페이지 클론 코딩입니다. <span>Node서버 기반으로 HTML, CSS, JavaScript, jQuery를 사용하여 개발</span>하였으며, 스터디를 구성하여 팀 프로젝트로 마켓컬리의 상품페이지와 회원가입 페이지를 구현했습니다.</p>
@@ -405,18 +428,51 @@ export default function MainComponent () {
                     </div>
                   </div>
                 </div>
-                <Link to='/project01'>
-                  <button className='view-detail-btn'>
-                  자세히보기
-                  </button>
-                </Link>
+                <div className="view-detail-btn">
+                  <Link to='/project01'>
+                    <button >
+                    자세히보기
+                    </button>
+                  </Link>
+                </div>
               </div>
               <div className="content-02">
                 <div className="content-title">
                   <h2>Kurly Project (개인)</h2>
                 </div>
                 <div className="project-info-02">
-                  <img src="./img/kurly-react.png" alt="" />
+                  <div className="swiper-container">
+                    <Swiper
+                      pagination = {{
+                        el: '.swiper-pagination-02',
+                        clickable: true,
+                        bulletClass:"custom_bullet",
+                        bulletActiveClass: "swiper-pagination-custom-bullet-active",
+                        renderBullet: function (index, className) {
+                          return `<button class="${className}"><img src="./img/project02-img/kurly_react_preview_${index + 1}.png" alt="Page ${index + 1}" /></button>`;
+                        }}}
+                      navigation={{
+                        nextEl: '.next-btn',
+                        prevEl: '.prev-btn'
+                      }}
+                      slidesPerView = {1}
+                      loop = {true}
+                    >
+                      <SwiperSlide><img src="./img/project02-img/kurly_react_preview_1.png" alt="kurly_react_img1" /></SwiperSlide>
+                      <SwiperSlide><img src="./img/project02-img/kurly_react_preview_2.png" alt="kurly_react_img2" /></SwiperSlide>
+                      <SwiperSlide><img src="./img/project02-img/kurly_react_preview_3.png" alt="kurly_react_img3" /></SwiperSlide>
+                      <SwiperSlide><img src="./img/project02-img/kurly_react_preview_4.png" alt="kurly_react_img4" /></SwiperSlide>
+                      <SwiperSlide><img src="./img/project02-img/kurly_react_preview_5.png" alt="kurly_react_img5" /></SwiperSlide>
+                      <SwiperSlide><img src="./img/project02-img/kurly_react_preview_6.png" alt="kurly_react_img6" /></SwiperSlide>
+                    </Swiper>
+                    <button className="next-btn">
+                      <img src="./img/png-transparent-arrow-font-awesome-computer-icons-right-arrow-cdr-angle-hand.png" alt="" />
+                    </button>
+                    <button className="prev-btn">
+                      <img src="./img/free-icon-right-6364333.png" alt="" />
+                    </button>
+                    <div className="swiper-pagination-02"></div>
+                  </div>
                   <div className="info">
                     <p>마켓컬리 홈페이지 클론 코딩입니다. <span className='color'>Node서버 기반으로 HTML, CSS, JavaScript, jQuery, React를 사용하여 개발</span>하였으며, <span className='underscore'>팀 프로젝트로 만든 마켓컬리를 React를 사용하여 다시 만든 프로젝트</span>입니다. </p>
                     <div className="development-info">
@@ -452,11 +508,13 @@ export default function MainComponent () {
                   </div>
                   
                 </div>
-                <Link to="/project02">
-                  <button className='view-detail-btn'>
+                <div className="view-detail-btn">
+                  <Link to='/project02'>
+                    <button >
                     자세히보기
-                  </button>
-                </Link>
+                    </button>
+                  </Link>
+                </div>
               </div>
               <div className="content-03">
                 <div className="content-title">
@@ -495,11 +553,13 @@ export default function MainComponent () {
                   </div>
                   
                 </div>
-                <Link to='project03'>
-                  <button className='view-detail-btn'>
+                <div className="view-detail-btn">
+                  <Link to='/project03'>
+                    <button >
                     자세히보기
-                  </button>
-                </Link>
+                    </button>
+                  </Link>
+                </div>
               </div>
             </div>
             

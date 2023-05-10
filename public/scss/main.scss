@@ -87,13 +87,15 @@
       }
     }
     .sec1-article {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       flex-grow: 0;
       flex-basis: 80%;
       height: 100vh;
       position: relative;
-      color: #fff;
       .img-box {
-        width: 100%;
+        width: 1228px;
         opacity: 0.4;
         height: 100vh;
         background: url(../img/jungho_bgimg.jpg) no-repeat 50% 100%;
@@ -101,23 +103,35 @@
         position: fixed;
       }
       .main-title{
-        position: absolute;
-        top: 30%;
-        left: 15%;
+        // position: absolute;
+        // top: 20%;
+        // left: 15%;
+      color: #fff;
+      .info-subtitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        span {
+          font-size: 30px;
+        }
+      }
         h2 {
-          margin: 20px 0;
           text-align: center;
           span {
-            font-size: 50px;
+            font-size: 90px;
+            background-size: 100% 100%;
+            background-image: linear-gradient(transparent 80%, rgb(141, 189, 238) 20%);
           }
           &.info {
-            font-size: 50px;
+            font-size: 70px;
           }
           &.info-name{
             font-size: 70px;
+            margin: 40px 0;
           }
           &.info-subtitle{
-            font-size: 40px;
+            font-size: 20px;
           }
           &.info-text-motto {
             font-size: 30px;
@@ -163,7 +177,7 @@
               transition: all 0.1s;
               &:hover {
                 // text-underline-offset: 7px;
-                background-color: #8dbdee;
+                background-color: rgb(141, 189, 238);
                 border-radius: 15px;
                 padding: 5px;
                 color: #000;
@@ -637,13 +651,79 @@
           .project-info-01 {
             width: 100%;
             display: flex;
-            padding-bottom: 20px;
-            .slide-container {
+            padding-bottom: 90px;
+            .swiper-container {
               width: 600px;
               margin-right: 50px;
-              img {
+              position: relative;
+              border-bottom: 2px solid #000;
+              &:hover > button {
+                opacity: 1;
+              }
+             > img {
                 width: 100%;
                 height: 400px;
+              }
+              > button {
+                border: 0;
+                background: none;
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                &.next-btn {
+                  width: 52px;
+                  height: 52px;
+                  position: absolute;
+                  top:50%;
+                  right:-4%;
+                  z-index: 2;
+                  margin-top:-26px;
+                }
+                &.prev-btn {
+                  width: 52px;
+                  height: 52px;
+                  position: absolute;
+                  top:50%;
+                  left:-3%;
+                  z-index: 2;
+                  margin-top:-26px;
+                  transform: rotate(180deg);
+                }
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+              .swiper-slide {
+                width: 100%;
+                img {
+                  width: 100%;
+                  height: 400px;
+                }
+              }
+              .swiper-pagination-01 {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                top: 100%;
+                padding-top: 10px;
+                .custom_bullet {
+                  width: 77px;
+                  height: 77px;
+                  opacity: 0.5;
+                  border: 0;
+                  background-color: #fff;
+                  border-radius: 3px;
+                }
+                .swiper-pagination-custom-bullet-active {
+                  opacity: 1;
+                  border:1px solid #3da5f5;
+                }
+                img {
+                  border-radius: 3px;
+                  width: 70px;
+                  height: 70px;
+                }
               }
             }
             .info {
@@ -692,20 +772,23 @@
                 }
               }
             }
-            
           }
           .view-detail-btn {
-            position: relative;
-            left: 40%;
-            width: 230px;
-            height: 50px;
-            background-color: #333;
-            border: 0;
-            border-radius: 6px;
-            color: #fff;
-            cursor: pointer;
-            font-size: 20px;
-            font-weight: 700;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            button {
+              width: 230px;
+              height: 50px;
+              background-color: #333;
+              font-size: 20px;
+              font-weight: 700;
+              border: 0;
+              border-radius: 6px;
+              color: #fff;
+              cursor: pointer;
+              
+            }
           }
         }
         .content-02 {
@@ -724,80 +807,154 @@
             font-weight: 700;
             text-align: center;
           }
-        }
-        .project-info-02 {
-          width: 100%;
-          display: flex;
-          padding-bottom: 20px;
-          img {
-            width: 600px;
-            margin: 20px 50px 0 0;
           }
-          .info {
+          .project-info-02 {
+            width: 100%;
             display: flex;
-            flex-direction: column;
-            min-width: 330px;
-            width: 63%;
-            > p {
-              font-size: 18px;
-              padding: 20px 0 10px 0;
-              line-height: 150%;
-              border-bottom: 1px solid #fff;
-              .color {
-                background-color: #8dbdee;
-                color: #000;
+            padding-bottom: 90px;
+            .swiper-container {
+              width: 600px;
+              margin-right: 50px;
+              position: relative;
+              border-bottom: 2px solid #000;
+              &:hover > button {
+                opacity: 1;
               }
-              .underscore {
-                text-decoration: underline;
-                text-underline-position: from-font;
+            > img {
+                width: 100%;
+                height: 400px;
+              }
+              > button {
+                border: 0;
+                background: none;
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity 0.5s ease-in-out;
+                &.next-btn {
+                  width: 52px;
+                  height: 52px;
+                  position: absolute;
+                  top:50%;
+                  right:-4%;
+                  z-index: 2;
+                  margin-top:-26px;
+                }
+                &.prev-btn {
+                  width: 52px;
+                  height: 52px;
+                  position: absolute;
+                  top:50%;
+                  left:-3%;
+                  z-index: 2;
+                  margin-top:-26px;
+                  transform: rotate(180deg);
+                }
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+              .swiper-slide {
+                width: 100%;
+                img {
+                  width: 100%;
+                  height: 400px;
+                }
+              }
+              .swiper-pagination-02 {
+                display: flex;
+                justify-content: space-between;
+                position: absolute;
+                top: 100%;
+                padding-top: 10px;
+                .custom_bullet {
+                  width: 77px;
+                  height: 77px;
+                  opacity: 0.5;
+                  border: 0;
+                  background-color: #fff;
+                  border-radius: 3px;
+                }
+                .swiper-pagination-custom-bullet-active {
+                  opacity: 1;
+                  border:1px solid #3da5f5;
+                }
+                img {
+                  border-radius: 3px;
+                  width: 70px;
+                  height: 70px;
+                }
               }
             }
-            .development-info {
-              width: 100%;
-              padding: 20px 0 10px 0;
-              border-bottom: 1px solid #fff;
-              .detail {
-                display: flex;
-                width: 100%;
-                padding: 10px 0;
-                font-size: 15px;
-                .left-p {
-                  width: 30%;
-                  font-weight: 900;
-                  span {
-                    display: inline-block;
-                    margin-right: 10px;
-                    transform: rotate(90deg);
-                  }
+            .info {
+              display: flex;
+              flex-direction: column;
+              min-width: 330px;
+              width: 63%;
+              > p {
+                font-size: 18px;
+                padding: 20px 0 10px 0;
+                line-height: 150%;
+                border-bottom: 1px solid #fff;
+                .color {
+                  background-color: #8dbdee;
+                  color: #000;
                 }
-                .right-p {
-                  width: 65%;
-                  font-weight: 900;
-                  a {
-                    color: rgb(242, 110, 110);
-                    &:hover {
-                      text-decoration: underline;
+                .underscore {
+                  text-decoration: underline;
+                  text-underline-position: from-font;
+                }
+              }
+              .development-info {
+                width: 100%;
+                padding: 20px 0 10px 0;
+                border-bottom: 1px solid #fff;
+                .detail {
+                  display: flex;
+                  width: 100%;
+                  padding: 10px 0;
+                  font-size: 15px;
+                  .left-p {
+                    width: 30%;
+                    font-weight: 900;
+                    span {
+                      display: inline-block;
+                      margin-right: 10px;
+                      transform: rotate(90deg);
+                    }
+                  }
+                  .right-p {
+                    width: 65%;
+                    font-weight: 900;
+                    a {
+                      color: rgb(242, 110, 110);
+                      &:hover {
+                        text-decoration: underline;
+                      }
                     }
                   }
                 }
               }
             }
           }
-          
-        }
-        .view-detail-btn {
-          position: relative;
-          left: 40%;
-          width: 230px;
-          height: 50px;
-          background-color: #333;
-          border: 0;
-          border-radius: 6px;
-          color: #fff;
-          cursor: pointer;
-          font-size: 20px;
-          font-weight: 700;
-        }
+          .view-detail-btn {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding-top: 10px;
+            button {
+              width: 230px;
+              height: 50px;
+              background-color: #333;
+              font-size: 20px;
+              font-weight: 700;
+              border: 0;
+              border-radius: 6px;
+              color: #fff;
+              cursor: pointer;
+              
+            }
+          }
         }
         .content-03 {
           width: 100%;
@@ -869,17 +1026,21 @@
             
           }
           .view-detail-btn {
-            position: relative;
-            left: 40%;
-            width: 230px;
-            height: 50px;
-            background-color: #333;
-            border: 0;
-            border-radius: 6px;
-            color: #fff;
-            cursor: pointer;
-            font-size: 20px;
-            font-weight: 700;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            button {
+              width: 230px;
+              height: 50px;
+              background-color: #333;
+              font-size: 20px;
+              font-weight: 700;
+              border: 0;
+              border-radius: 6px;
+              color: #fff;
+              cursor: pointer;
+              
+            }
           }
         }
       }

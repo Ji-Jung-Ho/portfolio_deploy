@@ -90,14 +90,16 @@
   color: #8dbdee;
 }
 #main #section1 .sec1-article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-grow: 0;
   flex-basis: 80%;
   height: 100vh;
   position: relative;
-  color: #fff;
 }
 #main #section1 .sec1-article .img-box {
-  width: 100%;
+  width: 1228px;
   opacity: 0.4;
   height: 100vh;
   background: url(../img/jungho_bgimg.jpg) no-repeat 50% 100%;
@@ -105,25 +107,34 @@
   position: fixed;
 }
 #main #section1 .sec1-article .main-title {
-  position: absolute;
-  top: 30%;
-  left: 15%;
+  color: #fff;
+}
+#main #section1 .sec1-article .main-title .info-subtitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#main #section1 .sec1-article .main-title .info-subtitle span {
+  font-size: 30px;
 }
 #main #section1 .sec1-article .main-title h2 {
-  margin: 20px 0;
   text-align: center;
 }
 #main #section1 .sec1-article .main-title h2 span {
-  font-size: 50px;
+  font-size: 90px;
+  background-size: 100% 100%;
+  background-image: linear-gradient(transparent 80%, rgb(141, 189, 238) 20%);
 }
 #main #section1 .sec1-article .main-title h2.info {
-  font-size: 50px;
+  font-size: 70px;
 }
 #main #section1 .sec1-article .main-title h2.info-name {
   font-size: 70px;
+  margin: 40px 0;
 }
 #main #section1 .sec1-article .main-title h2.info-subtitle {
-  font-size: 40px;
+  font-size: 20px;
 }
 #main #section1 .sec1-article .main-title h2.info-text-motto {
   font-size: 30px;
@@ -172,7 +183,7 @@
   transition: all 0.1s;
 }
 #main #section2 .sec2-aside .menu-bar .nav-main-title > li a:hover {
-  background-color: #8dbdee;
+  background-color: rgb(141, 189, 238);
   border-radius: 15px;
   padding: 5px;
   color: #000;
@@ -635,15 +646,81 @@
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 {
   width: 100%;
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 90px;
 }
-#main #section2 .sec2-article .project-content .content-01 .project-info-01 .slide-container {
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container {
   width: 600px;
   margin-right: 50px;
+  position: relative;
+  border-bottom: 2px solid #000;
 }
-#main #section2 .sec2-article .project-content .content-01 .project-info-01 .slide-container img {
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container:hover > button {
+  opacity: 1;
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container > img {
   width: 100%;
   height: 400px;
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container > button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container > button.next-btn {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 50%;
+  right: -4%;
+  z-index: 2;
+  margin-top: -26px;
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container > button.prev-btn {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 50%;
+  left: -3%;
+  z-index: 2;
+  margin-top: -26px;
+  transform: rotate(180deg);
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container > button img {
+  width: 100%;
+  height: 100%;
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container .swiper-slide {
+  width: 100%;
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container .swiper-slide img {
+  width: 100%;
+  height: 400px;
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container .swiper-pagination-01 {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 100%;
+  padding-top: 10px;
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container .swiper-pagination-01 .custom_bullet {
+  width: 77px;
+  height: 77px;
+  opacity: 0.5;
+  border: 0;
+  background-color: #fff;
+  border-radius: 3px;
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container .swiper-pagination-01 .swiper-pagination-custom-bullet-active {
+  opacity: 1;
+  border: 1px solid #3da5f5;
+}
+#main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container .swiper-pagination-01 img {
+  border-radius: 3px;
+  width: 70px;
+  height: 70px;
 }
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 .info {
   display: flex;
@@ -692,17 +769,20 @@
   text-decoration: underline;
 }
 #main #section2 .sec2-article .project-content .content-01 .view-detail-btn {
-  position: relative;
-  left: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#main #section2 .sec2-article .project-content .content-01 .view-detail-btn button {
   width: 230px;
   height: 50px;
   background-color: #333;
+  font-size: 20px;
+  font-weight: 700;
   border: 0;
   border-radius: 6px;
   color: #fff;
   cursor: pointer;
-  font-size: 20px;
-  font-weight: 700;
 }
 #main #section2 .sec2-article .project-content .content-02 {
   width: 100%;
@@ -725,11 +805,81 @@
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 {
   width: 100%;
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 90px;
 }
-#main #section2 .sec2-article .project-content .content-02 .project-info-02 img {
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container {
   width: 600px;
-  margin: 20px 50px 0 0;
+  margin-right: 50px;
+  position: relative;
+  border-bottom: 2px solid #000;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container:hover > button {
+  opacity: 1;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container > img {
+  width: 100%;
+  height: 400px;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container > button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container > button.next-btn {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 50%;
+  right: -4%;
+  z-index: 2;
+  margin-top: -26px;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container > button.prev-btn {
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  top: 50%;
+  left: -3%;
+  z-index: 2;
+  margin-top: -26px;
+  transform: rotate(180deg);
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container > button img {
+  width: 100%;
+  height: 100%;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container .swiper-slide {
+  width: 100%;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container .swiper-slide img {
+  width: 100%;
+  height: 400px;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container .swiper-pagination-02 {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 100%;
+  padding-top: 10px;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container .swiper-pagination-02 .custom_bullet {
+  width: 77px;
+  height: 77px;
+  opacity: 0.5;
+  border: 0;
+  background-color: #fff;
+  border-radius: 3px;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container .swiper-pagination-02 .swiper-pagination-custom-bullet-active {
+  opacity: 1;
+  border: 1px solid #3da5f5;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container .swiper-pagination-02 img {
+  border-radius: 3px;
+  width: 70px;
+  height: 70px;
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .info {
   display: flex;
@@ -782,17 +932,21 @@
   text-decoration: underline;
 }
 #main #section2 .sec2-article .project-content .content-02 .view-detail-btn {
-  position: relative;
-  left: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 10px;
+}
+#main #section2 .sec2-article .project-content .content-02 .view-detail-btn button {
   width: 230px;
   height: 50px;
   background-color: #333;
+  font-size: 20px;
+  font-weight: 700;
   border: 0;
   border-radius: 6px;
   color: #fff;
   cursor: pointer;
-  font-size: 20px;
-  font-weight: 700;
 }
 #main #section2 .sec2-article .project-content .content-03 {
   width: 100%;
@@ -864,17 +1018,20 @@
   text-decoration: underline;
 }
 #main #section2 .sec2-article .project-content .content-03 .view-detail-btn {
-  position: relative;
-  left: 40%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+#main #section2 .sec2-article .project-content .content-03 .view-detail-btn button {
   width: 230px;
   height: 50px;
   background-color: #333;
+  font-size: 20px;
+  font-weight: 700;
   border: 0;
   border-radius: 6px;
   color: #fff;
   cursor: pointer;
-  font-size: 20px;
-  font-weight: 700;
 }
 #main .footer {
   display: flex;
