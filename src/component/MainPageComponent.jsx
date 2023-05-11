@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import  { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
+import { Fade, Flip  } from "react-reveal";
 import 'swiper/swiper-bundle.css';
-import { Fade, Flip, Zoom  } from "react-reveal";
 
 SwiperCore.use([Navigation, Pagination])
 
@@ -13,9 +13,18 @@ export default function MainComponent () {
   const [dbTextui, setDbTextUi] = useState(false);
   const [collaborationTextui, setCollaborationTextUi] = useState(false);
 
+  const [isNavAboutme, setIsNavAboutme]= useState(false);
+  const [isNavEducation, setIsNavEducation]= useState(false);
+  const [isNavWork, setIsNavWork]= useState(false);
+  const [isNavInterView, setIsNavInterView]= useState(false);
+  const [isNavSkill, setIsNavSkill]= useState(false);
+  const [isNavProject, setIsNavProject]= useState(false);
+  const [isNavKurlyTeam, setIsKurlyTeam]= useState(false);
+  const [isNavKurlyReact, setIsNavKurlyReact]= useState(false);
+  const [isNavMyPage, setIsNavMyPage]= useState(false);
+
   const [scroll, setScrool] = useState(0);
 
-  // 스크롤 탑 값을 구하는 함수
   const onScroll=()=>{  
     setScrool(window.scrollY || document.documentElement.scrollTop);
   }
@@ -23,17 +32,20 @@ export default function MainComponent () {
   const scrollToContent = (top) => {
     window.scrollTo({top: top, behavior: 'smooth'});
   }
+
+  // 클릭 시 해당 탑 값으로 스크롤 이동
   const onClickmenu = (e, top) => {
     e.preventDefault();
     scrollToContent(top);
   };
 
-  // 컴포넌트가 실행될때 최초 한번만 실행 
+  // 컴포넌트가 실행될때(새로고침 시) 최초 한번만 실행 
   useEffect(() => {
     window.addEventListener("scroll", onScroll);
     window.scrollTo(0, 0);
 }, []);
 
+// Skill UI 클릭 시 상태 변경
   const onClickToggleFrontend=()=>{
     setFrontendTextUi (frontendTextUi => !frontendTextUi);
   }
@@ -47,11 +59,108 @@ export default function MainComponent () {
     setCollaborationTextUi (collaborationTextui => !collaborationTextui);
   }
 
-  // 스크롤 탑값을 구하기 위한 함수 추후 삭제 예정
-  const scrolltop=()=>{
-    let scrollPosition = window.scrollY || document.documentElement.scrollTop;
-    console.log(scrollPosition);
-  }
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollY = window.scrollY;
+  
+      if (scrollY >= 199 && scrollY <= 1098) {
+        setIsNavAboutme(true);
+        setIsNavEducation(true);
+        setIsNavWork(false);
+        setIsNavInterView(false);
+        setIsNavSkill(false);
+        setIsNavProject(false);
+        setIsKurlyTeam(false);
+        setIsNavKurlyReact(false);
+        setIsNavMyPage(false);
+      } else if (scrollY >= 1099 && scrollY <= 1797) {
+        setIsNavAboutme(true);
+        setIsNavEducation(false);
+        setIsNavWork(true);
+        setIsNavInterView(false);
+        setIsNavSkill(false);
+        setIsNavProject(false);
+        setIsKurlyTeam(false);
+        setIsNavKurlyReact(false);
+        setIsNavMyPage(false);
+      } else if (scrollY >= 1798 && scrollY <= 2997) {
+        setIsNavAboutme(true);
+        setIsNavEducation(false);
+        setIsNavWork(false);
+        setIsNavInterView(true);
+        setIsNavSkill(false);
+        setIsNavProject(false);
+        setIsKurlyTeam(false);
+        setIsNavKurlyReact(false);
+        setIsNavMyPage(false);
+      } else if (scrollY >= 2998 && scrollY <= 3699) {
+        setIsNavAboutme(false);
+        setIsNavEducation(false);
+        setIsNavWork(false);
+        setIsNavInterView(false);
+        setIsNavSkill(true);
+        setIsNavProject(false);
+        setIsKurlyTeam(false);
+        setIsNavKurlyReact(false);
+        setIsNavMyPage(false);
+      } else if (scrollY >= 3700 && scrollY <= 4482) {
+        setIsNavAboutme(false);
+        setIsNavEducation(false);
+        setIsNavWork(false);
+        setIsNavInterView(false);
+        setIsNavSkill(false);
+        setIsNavProject(true);
+        setIsKurlyTeam(true);
+        setIsNavKurlyReact(false);
+        setIsNavMyPage(false);
+      } else if (scrollY >= 4483 && scrollY < 5187) {
+        setIsNavAboutme(false);
+        setIsNavEducation(false);
+        setIsNavWork(false);
+        setIsNavInterView(false);
+        setIsNavSkill(false);
+        setIsNavProject(true);
+        setIsKurlyTeam(false);
+        setIsNavKurlyReact(true);
+        setIsNavMyPage(false);
+      } else if (scrollY >= 5188 && scrollY <= 5883) {
+        setIsNavAboutme(false);
+        setIsNavEducation(false);
+        setIsNavWork(false);
+        setIsNavInterView(false);
+        setIsNavSkill(false);
+        setIsNavProject(true);
+        setIsKurlyTeam(false);
+        setIsNavKurlyReact(false);
+        setIsNavMyPage(true);
+      } else {
+        setIsNavEducation(false);
+        setIsNavWork(false);
+        setIsNavInterView(false);
+        setIsNavSkill(false);
+        setIsNavProject(false);
+        setIsKurlyTeam(false);
+        setIsNavKurlyReact(false);
+        setIsNavMyPage(false);
+      }
+    };
+  
+    window.addEventListener('scroll', onScroll);
+  
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
+  const navAboutme = isNavAboutme ? 'nav-title-btn' : '';
+  const navEducation = isNavEducation ? 'nav-subtitle-btn' : '';
+  const navWork = isNavWork ? 'nav-subtitle-btn' : '';
+  const navInterView = isNavInterView ? 'nav-subtitle-btn' : '';
+  const navSkill = isNavSkill ? 'nav-title-btn' : '';
+  const navProject = isNavProject ? 'nav-title-btn' : '';
+  const navKurlyTeam = isNavKurlyTeam ? 'nav-subtitle-btn' : '';
+  const navKurlyReact = isNavKurlyReact ? 'nav-subtitle-btn' : '';
+  const navMyPage = isNavMyPage ? 'nav-subtitle-btn' : '';
 
   return (
     <>
@@ -78,7 +187,7 @@ export default function MainComponent () {
               <div className="img-box">
               </div>
               <div className="main-title">
-                <Fade top>
+                <Fade top duration={2000}>
                   <h2 className='info'>상상을 구현하는</h2>
                 </Fade>
                 <Flip top duration={2000} >
@@ -94,6 +203,10 @@ export default function MainComponent () {
                   </div>
                 </Fade>
               </div>
+              <div className="down-arrow">
+                <img src="./img/56747.png" alt="" />
+              </div>
+
             </article>
         </section>
         <section id="section2" className='main-content'>
@@ -101,25 +214,24 @@ export default function MainComponent () {
             <nav className='menu-bar'>
               <ul className="nav-main-title">
                 <li><a href="#!" onClick={(e) => onClickmenu(e, 0)}>Home</a></li>
-                <button onClick={scrolltop}>스크롤값</button>
                 <li>
-                  <a href='#!' onClick={(e) => onClickmenu(e, 799)}>ABOUT ME</a>
+                  <a href='#!' className={navAboutme} onClick={(e) => onClickmenu(e, 799)}>ABOUT ME</a>
                   <div className="project-submenu">
                     <ul>
-                      <li><a href="#!" onClick={(e) => onClickmenu(e, 958)}>- Education</a></li>
-                      <li><a href="#!" onClick={(e) => onClickmenu(e, 1708)}>- Work experience</a></li>
-                      <li><a href="#!" onClick={(e) => onClickmenu(e, 2508)}>- Self InterView</a></li>
+                      <li><a href="#!" className={navEducation} onClick={(e) => onClickmenu(e, 858)}>- Education</a></li>
+                      <li><a href="#!" className={navWork} onClick={(e) => onClickmenu(e, 1653)}>- Work experience</a></li>
+                      <li><a href="#!" className={navInterView} onClick={(e) => onClickmenu(e, 2508)}>- Self InterView</a></li>
                     </ul>
                   </div>
                 </li>
-                <li><a href='#!' onClick={(e) => onClickmenu(e, 3698)}>SKILLS</a></li>
+                <li><a href='#!' className={navSkill} onClick={(e) => onClickmenu(e, 3698)}>SKILLS</a></li>
                 <li>
-                  <a href='#!' onClick={(e) => onClickmenu(e, 4387)}>PROJECT</a>
+                  <a href='#!' className={navProject} onClick={(e) => onClickmenu(e, 4387)}>PROJECT</a>
                   <div className='project-submenu'>
                     <ul>
-                      <li><a href="#!" onClick={(e) => onClickmenu(e, 4387)}>- Kurly Team Project</a></li>
-                      <li><a href="#!" onClick={(e) => onClickmenu(e, 5087)}>- Kurly 개인 Porject</a></li>
-                      <li><a href="#!" onClick={(e) => onClickmenu(e, 5613)}>- 나의 포트폴리오 개발</a></li>
+                      <li><a href="#!" className={navKurlyTeam} onClick={(e) => onClickmenu(e, 4487)}>- Kurly Team Project</a></li>
+                      <li><a href="#!" className={navKurlyReact} onClick={(e) => onClickmenu(e, 5187)}>- Kurly 개인 Porject</a></li>
+                      <li><a href="#!" className={navMyPage} onClick={(e) => onClickmenu(e, 5783)}>- 나의 포트폴리오 개발</a></li>
                     </ul>
                   </div>
                 </li>
@@ -292,7 +404,7 @@ export default function MainComponent () {
                         - state, props 개념 및 데이터의 흐름 이해 <br/>
                         - Axios를 활용하여 비동기 통신이 가능한 웹페이지 구현 경험 <br/>
                         - Hook을 사용하여 React.state, useEffect 등 생명주기 연동 가능 <br/>
-                        - React-router-dom을 사용한 페이지 이동
+                        - React-router-dom을 사용한 페이지 이동 구현
                         </p>
                       </div>
                   </div>
@@ -343,7 +455,8 @@ export default function MainComponent () {
                     <div className="detail-box">
                       <p>
                         - GitHub를 통한 레포지토리 관리 <br/>
-                        - Git bash를 이용하여 홈페이지 배포 가능
+                        - Git bash를 이용하여 홈페이지 배포 가능 <br/>
+                        - Git, Node.js를 통한 빌드 가능
                       </p>
                     </div>
                   </div>
@@ -373,8 +486,8 @@ export default function MainComponent () {
                           return `<button class="${className}"><img src="./img/project01-img/kurly_jquery_preview_${index + 1}.png" alt="Page ${index + 1}" /></button>`;
                         }}}
                       navigation={{
-                        nextEl: '.next-btn',
-                        prevEl: '.prev-btn'
+                        nextEl: '.project-01-next-btn',
+                        prevEl: '.project-01-prev-btn'
                       }}
                       slidesPerView = {1}
                       loop = {true}
@@ -386,11 +499,11 @@ export default function MainComponent () {
                       <SwiperSlide><img src="./img/project01-img/kurly_jquery_preview_5.png" alt="kurly_jQuery_img5" /></SwiperSlide>
                       <SwiperSlide><img src="./img/project01-img/kurly_jquery_preview_6.png" alt="kurly_jQuery_img6" /></SwiperSlide>
                     </Swiper>
-                    <button className="next-btn">
-                      <img src="./img/png-transparent-arrow-font-awesome-computer-icons-right-arrow-cdr-angle-hand.png" alt="" />
+                    <button className="project-01-next-btn">
+                      <img src="./img/swiper-nav-btn.png" alt="" />
                     </button>
-                    <button className="prev-btn">
-                      <img src="./img/free-icon-right-6364333.png" alt="" />
+                    <button className="project-01-prev-btn">
+                      <img src="./img/swiper-nav-btn.png" alt="" />
                     </button>
                     <div className="swiper-pagination-01"></div>
                   </div>
@@ -452,8 +565,8 @@ export default function MainComponent () {
                           return `<button class="${className}"><img src="./img/project02-img/kurly_react_preview_${index + 1}.png" alt="Page ${index + 1}" /></button>`;
                         }}}
                       navigation={{
-                        nextEl: '.next-btn',
-                        prevEl: '.prev-btn'
+                        nextEl: '.project-02-next-btn',
+                        prevEl: '.project-02-prev-btn'
                       }}
                       slidesPerView = {1}
                       loop = {true}
@@ -465,11 +578,11 @@ export default function MainComponent () {
                       <SwiperSlide><img src="./img/project02-img/kurly_react_preview_5.png" alt="kurly_react_img5" /></SwiperSlide>
                       <SwiperSlide><img src="./img/project02-img/kurly_react_preview_6.png" alt="kurly_react_img6" /></SwiperSlide>
                     </Swiper>
-                    <button className="next-btn">
-                      <img src="./img/png-transparent-arrow-font-awesome-computer-icons-right-arrow-cdr-angle-hand.png" alt="" />
+                    <button className="project-02-next-btn">
+                      <img src="./img/swiper-nav-btn.png" alt="" />
                     </button>
-                    <button className="prev-btn">
-                      <img src="./img/free-icon-right-6364333.png" alt="" />
+                    <button className="project-02-prev-btn">
+                      <img src="./img/swiper-nav-btn.png" alt="" />
                     </button>
                     <div className="swiper-pagination-02"></div>
                   </div>
@@ -527,7 +640,7 @@ export default function MainComponent () {
                     <div className="development-info">
                       <div className='detail'>
                         <p className='left-p'><span>🔺</span>개발 기간</p>
-                        <p className='right-p'>2022-04 ~ 2023-04</p>
+                        <p className='right-p'>2022-04 ~ 2023-05</p>
                       </div>
                       <div className='detail'>
                         <p className='left-p'><span>🔺</span>개발 인원</p>
@@ -535,7 +648,7 @@ export default function MainComponent () {
                       </div>
                       <div className='detail'>
                         <p className='left-p'><span>🔺</span>Frontend</p>
-                        <p className='right-p'>HTML,&nbsp;CSS,&nbsp;javascript,&nbsp;React</p>
+                        <p className='right-p'>HTML,&nbsp;CSS,&nbsp;Javascript,&nbsp;React</p>
                       </div>
                       <div className='detail'>
                         <p className='left-p'><span>🔺</span>Backend</p>

@@ -81,6 +81,7 @@
             line-height: 200%;
             font-size: 20px;
             padding-left: 20px;
+            font-weight: 700;
             span {
               background-color: #8dbdee;
               color: #000;
@@ -122,26 +123,6 @@
               padding: 5px;
             }
           }
-          ul {
-            width: 100%;
-            margin: 10px 0 10px 20px;
-            line-height: 200%;
-            li {
-              font-size: 20px;
-              margin: 20px 0;
-              img {
-                width: 10px;
-                margin-right: 20px;
-              }
-              span {
-                background-color: #631a7b;
-                color: #fff;
-                font-weight: 700;
-                border-radius: 3px;
-                padding: 5px;
-              }
-            }
-          }
           p {
             line-height: 200%;
             font-size: 18px;
@@ -163,8 +144,8 @@
             margin: 20px 0;
             padding-left: 20px;
             span {
-              background-color: #600080;
-              color: #fff;
+              background-color: #8dbdee;
+              color: #000;
               border-radius: 3px;
               padding: 5px;
             }
