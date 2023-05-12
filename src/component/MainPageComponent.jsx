@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import  { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
-import { Fade, Flip  } from "react-reveal";
+import {Fade} from 'react-reveal';
 import 'swiper/swiper-bundle.css';
 
 SwiperCore.use([Navigation, Pagination])
@@ -168,7 +168,6 @@ export default function MainComponent () {
         <section id='section1' className='intro'>
             <aside className="sec1-aside">
               <nav className='menu-bar'>
-              <Fade left duration={2000}>
                 <ul className="main-title">
                   <li><a href="#!" onClick={(e) => onClickmenu(e, 0)}>Home</a></li>
                   <li><a href='#!' onClick={(e) => onClickmenu(e, 799)}>ABOUT ME</a></li>
@@ -180,28 +179,21 @@ export default function MainComponent () {
                   <li><a href="https://github.com/Ji-Jung-Ho" target="_blank">github.com/Ji-Jung-Ho</a></li>
                   <li><p>Last Update : 2023-04-27</p></li>
                 </ul>
-              </Fade>
               </nav>
             </aside>
             <article className="sec1-article">
               <div className="img-box">
               </div>
               <div className="main-title">
-                <Fade top duration={2000}>
-                  <h2 className='info'>상상을 구현하는</h2>
-                </Fade>
-                <Flip top duration={2000} >
+                  <Fade left><h2 className='info'>상상을 구현하는</h2></Fade>
                   <h2 className='info-name'>
                     <span>지정호</span> 입니다.
                   </h2>
-                </Flip>
-                <Fade bottom duration={2000}>
                   <div className='info-subtitle'>
                     <span>프론트앤드 개발자를 목표로 노력하고 있습니다.</span>
                     <span>부족한 부분을 하나씩 채워가는 재미를 즐깁니다.</span>
                     <span>: 인생을 긍정적으로 살아가자라는 좌우명을 가지고 있습니다.</span>
                   </div>
-                </Fade>
               </div>
               <div className="down-arrow">
                 <img src="./img/56747.png" alt="" />
