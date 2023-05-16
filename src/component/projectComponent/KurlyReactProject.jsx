@@ -47,13 +47,13 @@ export default function Project02Component () {
             <div className="project-info">
               <h2>❗프로젝트 설명</h2>
               <p className='explanation'>
-                Jquery를 사용하여 만든 마켓컬리 팀 프로젝트를 React를 사용하여 재구현한 홈페이지 입니다. jQuery에서 사용할 수 있는 부분은 사용하고
+                jQuery를 사용하여 만든 마켓컬리 팀 프로젝트를 React를 사용하여 재구현한 홈페이지 입니다. jQuery에서 사용할 수 있는 부분은 사용하고
                 추가로 구현하지 못했던 부분 등을 스스로 구현한 팀 프로젝트보다 마켓컬리 본 사이트에 가까운 홈페이지 입니다. <br />
               </p>
               <p><strong>마켓컬리</strong> 프로젝트에서 구현한 핵심 기능은 <span>3가지</span>입니다.</p>
               <ul>
                 <li>&nbsp;애니메이션과 슬라이드로 구성된 메인 페이지</li>
-                <li>&nbsp;4개의 테마(신상품, 베스트, 알뜰쇼핑, 특가/혜택)로 나뉘어져 있는 상품 소개 페이지</li>
+                <li>&nbsp;4개의 테마(<span>신상품</span>, <span>베스트</span>, <span>알뜰쇼핑</span>, <span>특가/혜택</span>)로 나뉘어져 있는 상품 소개 페이지</li>
                 <li>&nbsp;회원가입 페이지와 DB와 연동하여 회원가입 기능 구현</li>
               </ul>
             </div>
@@ -83,20 +83,20 @@ export default function Project02Component () {
                 같은 방식으로 한번 더 배운걸 반복하기 위해 이용약관동의 '약관보기'도 모달이 출력되게 구현했습니다. <br />
                 비동기 처리 방식인 Promise를 사용하여 입력된 주소값을 SessionStorage에 저장하여 새로고침을 해도 한번 저장된 주소값이 유지되게 구현했습니다.
               </p>
-            </div>
-            <div className="experience">
-              <h2 className='experience-main-title'>❗성장 경험</h2>
               <h2 className='sub-title'><span>CORS를 통한 엑세스 요청</span></h2>
               <p>
               리액트 서버와 PHP/MYSQL 서버주소가 서로 다르기 때문에 데이터베이스에 접속이 불가능했습니다. 
               이러한 이슈를 해결하기 위해 PHP로 만든 MySQL insert문에서 접속 허락 헤더문을 추가해 서버와 접속 가능하게 구현했습니다.
               </p>
-              <h2 className='sub-title'><span>JavaScript 라이브러리에 대한 이해</span></h2>
+            </div>
+            <div className="experience">
+              <h2 className='experience-main-title'>❗성장 경험</h2>
+              <h2 className='sub-title'><span>React 대한 이해</span></h2>
               <p>
                 jQuery로 만들었던 프로젝트를 React로 바꾸면서 각 라이브러리의 작동 방식을 알 수 있었습니다.
                 PHP 파일로 다 나눠서 관리했던 jQuery와 달리 React에서는 컴포넌트로 세부적으로 관리할 뿐만 아니라 
-                최상위 컴포넌트인 WrapComponent에서 useState를 사용하여 상태관리를 하고, 
-                Props를 하위 컴포넌트에게 데이터를 전달하는걸 알게되었습니다.
+                최상위 컴포넌트인 WrapComponent에서 useState를 사용하여 상태관리를 하고, Props를 하위 컴포넌트에게 데이터를 전달하는걸 알게되었습니다.
+                useState를 통해 효율적으로 상태 변수값을 설정하고 
                 TypeScript를 사용하여 각 변수에 타입을 명시하여 코드의 에러를 사전에 방지할 수 있다는걸 배웠습니다.
               </p>
             </div>

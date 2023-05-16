@@ -18,6 +18,7 @@
         padding: 20px 0;
         height: 100%;
         background-color: #202224;
+        font-family: 'Black Han Sans';
         .main-title{
           display: flex;
           align-items: center;
@@ -169,13 +170,14 @@
     .sec2-aside {
       display: flex;
       flex-basis: 20%;
-      height: 100%;
+      height: 100vh;
       flex-grow: 0;
       align-items: center;
       justify-content:space-between;
       flex-direction: column;
       padding: 70px 0;
-      background-color: #032431;
+      // background-color: #202224;
+      background-color: #31333B;
       position: sticky;
       top: 0;
       .menu-bar {
@@ -187,6 +189,7 @@
           justify-content: space-around;
           flex-direction: column;
           transition: all 0.3s;
+          font-family: 'Black Han Sans';
           > li {
             text-align: center;
             padding: 30px 0;
@@ -220,9 +223,10 @@
                     margin-top: 30px;
                   }
                   a {
-                    font-size: 15px;
+                    font-size: 17px;
+                    font-weight: 700;
                     &.nav-subtitle-btn {
-                      color: #f8cd07;
+                      color: #ffc98e;
                     }
                   }
                 }
@@ -237,7 +241,7 @@
       flex-grow: 0;
       overflow: hidden;
       padding: 40px 40px 0 40px;
-      background-color: #fff;
+      background-color: #FDF8F2;
       .main-title {
         width: 180px;
         height: 50px;
@@ -249,6 +253,7 @@
         left: 53%;
         background-color: #8dbdee;
         border-radius: 20px;
+        font-family: 'Black Han Sans';
         h2 {
           font-size: 30px;
           font-weight: 700;
@@ -259,13 +264,13 @@
         display: flex;
         border-radius: 5px;
         box-shadow: 0 6px 18px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+        background-color: #fff;
         .about-me {
           width: 100%;
           display: flex;
           justify-content: center;
           padding: 20px 0;
           margin-left: 120px;
-          
           .row1-left {
             width: 350px;
             .name {
@@ -343,6 +348,7 @@
         border-bottom: 1px solid #000;
         .edcation-main-title {
           padding: 50px 0;
+          font-family: 'Black Han Sans';
           h2 {
             font-size: 50px;
             font-weight: 600;
@@ -356,6 +362,7 @@
           padding-left: 20px;
           border-radius: 5px;
           box-shadow: 0 6px 18px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+          background-color: #fff;
           .education-school {
             width: 100%;
             padding: 20px 0;
@@ -401,6 +408,7 @@
         padding-bottom: 70px;
         .work-experience-main-title {
           padding: 50px 0;
+          font-family: 'Black Han Sans';
           h2 {
             font-size: 50px;
             font-weight: 600;
@@ -413,6 +421,7 @@
           border-radius: 5px;
           padding: 20px;
           box-shadow: 0 6px 18px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
+          background-color: #fff;
           h1 {
             font-size: 30px;
             padding: 20px 0 0 0;
@@ -432,119 +441,6 @@
               > h2 {
                 font-size: 50px;
               }
-              span {
-                text-decoration: underline;
-                text-underline-offset: 7px;
-              }
-            }
-          }
-        }
-      }
-      .interview-main-title {
-        width: 100%;
-        padding: 50px 0;
-        h1 {
-          font-size: 50px;
-          font-weight: 600;
-          text-decoration: underline;
-          text-underline-offset: 7px;
-          text-align: center;
-        }
-      }
-      .interview-box {
-        width: 100%;
-        padding-bottom: 70px;
-        border-bottom: 1px solid #000;
-        .row-1 {
-          position: relative;
-          display: flex;
-          width: 100%;
-          padding: 50px 0;
-          &::after {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            top: 100%;
-            background-color: #000;
-          }
-          .interview-sub-title-0102 {
-            width: 50%;
-            padding: 0 10px;
-            .interview-0102 {
-              display: block;
-              width: 545px;
-              height: 50px;
-              margin: 0 0 10px 10px;
-              font-size: 28px;
-              color: #202224;
-              font-weight: 700;
-              text-decoration: underline;
-              text-underline-offset: 7px;
-              > img {
-                width: 30px;
-                margin: 0 10px 5px 0;
-              }
-            }
-            .content-box {
-              height: 400px;
-              padding: 0px 20px;
-              overflow-y: auto;
-              box-shadow: 0 6px 18px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
-              border-radius: 5px;
-              &::-webkit-scrollbar {
-                width: 10px;
-              }
-              &::-webkit-scrollbar-thumb {
-                background: #424242;
-                border-radius: 10px;
-              }
-              .content {
-                line-height: 200%;
-                font-size: 20px;
-                color: #000;
-              }
-            }
-          }
-        }
-        .row-2 {
-          display: flex;
-          width: 100%;
-          .interview-sub-title-0304 {
-            width: 50%;
-            padding: 0 10px;
-            .interview-0304 {
-              display: block;
-              width: 545px;
-              height: 50px;
-              margin: 45px 0 10px 10px;
-              font-size: 28px;
-              color: #202224;
-              font-weight: 700;
-              text-decoration: underline;
-              text-underline-offset: 7px;
-              > img {
-                width: 30px;
-                margin: 0 10px 5px 0;
-              }
-            }
-            .content-box {
-              height: 400px;
-              padding: 10px 20px 0px 20px;
-              overflow-y: auto;
-              box-shadow: 0 6px 18px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
-              border-radius: 5px;
-              &::-webkit-scrollbar {
-                width: 10px;
-              }
-              &::-webkit-scrollbar-thumb {
-                background: #424242;
-                border-radius: 10px;
-              }
-              .content {
-                line-height: 200%;
-                font-size: 20px;
-              }
             }
           }
         }
@@ -556,10 +452,11 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        top: 51.4%;
+        top: 37.3%;
         left: 53%;
         background-color: #8dbdee;
         border-radius: 20px;
+        font-family: 'Black Han Sans';
         h2 {
           font-size: 30px;
           font-weight: 700;
@@ -581,6 +478,8 @@
           margin: 0 10px;
           position: relative;
           transition: all 0.2s;
+        background-color: #fff;
+
           &:hover {
             transform: translateY(30px);
           }
@@ -652,10 +551,11 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        top: 63.5%;
+        top: 52.9%;
         left: 53%;
         background-color: #8dbdee;
         border-radius: 20px;
+        font-family: 'Black Han Sans';
         h2 {
           font-size: 30px;
           font-weight: 700;
@@ -675,6 +575,7 @@
           .content-title {
             width: 100%;
             padding-bottom: 30px;
+            font-family: 'Black Han Sans';
             h2 {
               font-size: 50px;
               font-weight: 700;
@@ -834,6 +735,7 @@
           .content-title {
           width: 100%;
           padding-bottom: 30px;
+          font-family: 'Black Han Sans';
           h2 {
             font-size: 40px;
             font-size: 50px;
@@ -1000,6 +902,7 @@
           .content-title {
             width: 100%;
             padding-bottom: 30px;
+            font-family: 'Black Han Sans';
             h2 {
               font-size: 40px;
               font-size: 50px;
@@ -1085,7 +988,7 @@
     justify-content: center;
     align-items: center;
     height: 220px;
-    background-color: #fff;
+    background-color: #FDF8F2;
     position: relative;
     h2 {
       font-size: 16px;

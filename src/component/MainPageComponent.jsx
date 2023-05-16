@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import  { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
-import {Fade} from 'react-reveal';
+import {Fade, Flip} from 'react-reveal';
 import 'swiper/swiper-bundle.css';
 
 SwiperCore.use([Navigation, Pagination])
@@ -16,12 +16,13 @@ export default function MainComponent () {
   const [isNavAboutme, setIsNavAboutme]= useState(false);
   const [isNavEducation, setIsNavEducation]= useState(false);
   const [isNavWork, setIsNavWork]= useState(false);
-  const [isNavInterView, setIsNavInterView]= useState(false);
   const [isNavSkill, setIsNavSkill]= useState(false);
   const [isNavProject, setIsNavProject]= useState(false);
   const [isNavKurlyTeam, setIsKurlyTeam]= useState(false);
   const [isNavKurlyReact, setIsNavKurlyReact]= useState(false);
   const [isNavMyPage, setIsNavMyPage]= useState(false);
+
+  // const [isVisible, setIsVisible] = useState(false);
 
   const [scroll, setScrool] = useState(0);
 
@@ -33,7 +34,7 @@ export default function MainComponent () {
     window.scrollTo({top: top, behavior: 'smooth'});
   }
 
-  // 클릭 시 해당 탑 값으로 스크롤 이동
+  // section1,2 aside menu 클릭 시 해당 탑 값으로 스크롤 이동
   const onClickmenu = (e, top) => {
     e.preventDefault();
     scrollToContent(top);
@@ -59,6 +60,7 @@ export default function MainComponent () {
     setCollaborationTextUi (collaborationTextui => !collaborationTextui);
   }
 
+// 스크롤 값에 따라 section2 aside menu list className 추가
   useEffect(() => {
     const onScroll = () => {
       const scrollY = window.scrollY;
@@ -67,67 +69,51 @@ export default function MainComponent () {
         setIsNavAboutme(true);
         setIsNavEducation(true);
         setIsNavWork(false);
-        setIsNavInterView(false);
         setIsNavSkill(false);
         setIsNavProject(false);
         setIsKurlyTeam(false);
         setIsNavKurlyReact(false);
         setIsNavMyPage(false);
-      } else if (scrollY >= 1099 && scrollY <= 1797) {
+      } else if (scrollY >= 1099 && scrollY <= 1796) {
         setIsNavAboutme(true);
         setIsNavEducation(false);
         setIsNavWork(true);
-        setIsNavInterView(false);
         setIsNavSkill(false);
         setIsNavProject(false);
         setIsKurlyTeam(false);
         setIsNavKurlyReact(false);
         setIsNavMyPage(false);
-      } else if (scrollY >= 1798 && scrollY <= 2997) {
-        setIsNavAboutme(true);
-        setIsNavEducation(false);
-        setIsNavWork(false);
-        setIsNavInterView(true);
-        setIsNavSkill(false);
-        setIsNavProject(false);
-        setIsKurlyTeam(false);
-        setIsNavKurlyReact(false);
-        setIsNavMyPage(false);
-      } else if (scrollY >= 2998 && scrollY <= 3699) {
+      } else if (scrollY >= 1797 && scrollY <= 2399) {
         setIsNavAboutme(false);
         setIsNavEducation(false);
         setIsNavWork(false);
-        setIsNavInterView(false);
         setIsNavSkill(true);
         setIsNavProject(false);
         setIsKurlyTeam(false);
         setIsNavKurlyReact(false);
         setIsNavMyPage(false);
-      } else if (scrollY >= 3700 && scrollY <= 4482) {
+      } else if (scrollY >= 2400 && scrollY <= 3153) {
         setIsNavAboutme(false);
         setIsNavEducation(false);
         setIsNavWork(false);
-        setIsNavInterView(false);
         setIsNavSkill(false);
         setIsNavProject(true);
         setIsKurlyTeam(true);
         setIsNavKurlyReact(false);
         setIsNavMyPage(false);
-      } else if (scrollY >= 4483 && scrollY < 5187) {
+      } else if (scrollY >= 3154 && scrollY <= 3887) {
         setIsNavAboutme(false);
         setIsNavEducation(false);
         setIsNavWork(false);
-        setIsNavInterView(false);
         setIsNavSkill(false);
         setIsNavProject(true);
         setIsKurlyTeam(false);
         setIsNavKurlyReact(true);
         setIsNavMyPage(false);
-      } else if (scrollY >= 5188 && scrollY <= 5883) {
+      } else if (scrollY >= 3888 && scrollY <= 4547) {
         setIsNavAboutme(false);
         setIsNavEducation(false);
         setIsNavWork(false);
-        setIsNavInterView(false);
         setIsNavSkill(false);
         setIsNavProject(true);
         setIsKurlyTeam(false);
@@ -136,7 +122,6 @@ export default function MainComponent () {
       } else {
         setIsNavEducation(false);
         setIsNavWork(false);
-        setIsNavInterView(false);
         setIsNavSkill(false);
         setIsNavProject(false);
         setIsKurlyTeam(false);
@@ -152,48 +137,46 @@ export default function MainComponent () {
     };
   }, []);
 
-  const navAboutme = isNavAboutme ? 'nav-title-btn' : '';
-  const navEducation = isNavEducation ? 'nav-subtitle-btn' : '';
-  const navWork = isNavWork ? 'nav-subtitle-btn' : '';
-  const navInterView = isNavInterView ? 'nav-subtitle-btn' : '';
-  const navSkill = isNavSkill ? 'nav-title-btn' : '';
-  const navProject = isNavProject ? 'nav-title-btn' : '';
-  const navKurlyTeam = isNavKurlyTeam ? 'nav-subtitle-btn' : '';
-  const navKurlyReact = isNavKurlyReact ? 'nav-subtitle-btn' : '';
-  const navMyPage = isNavMyPage ? 'nav-subtitle-btn' : '';
-
   return (
     <>
       <main id='main'>
         <section id='section1' className='intro'>
+          <Fade left duration={2000} delay={2000}>
             <aside className="sec1-aside">
               <nav className='menu-bar'>
                 <ul className="main-title">
                   <li><a href="#!" onClick={(e) => onClickmenu(e, 0)}>Home</a></li>
                   <li><a href='#!' onClick={(e) => onClickmenu(e, 799)}>ABOUT ME</a></li>
-                  <li><a href='#!' onClick={(e) => onClickmenu(e, 3698)}>SKILLS</a></li>
-                  <li><a href='#!' onClick={(e) => onClickmenu(e, 4387)}>PROJECT</a></li>
+                  <li><a href='#!' onClick={(e) => onClickmenu(e, 2398)}>SKILLS</a></li>
+                  <li><a href='#!' onClick={(e) => onClickmenu(e, 3152)}>PROJECT</a></li>
                 </ul>
                 <ul className='github-email'>
                   <li><a href="mailto:kiik52.naver.com">kiik52.naver.com</a></li>
                   <li><a href="https://github.com/Ji-Jung-Ho" target="_blank">github.com/Ji-Jung-Ho</a></li>
-                  <li><p>Last Update : 2023-04-27</p></li>
+                  <li><p>Last Update : 2023-05-15</p></li>
                 </ul>
               </nav>
             </aside>
+          </Fade>
             <article className="sec1-article">
               <div className="img-box">
               </div>
               <div className="main-title">
-                  <Fade left><h2 className='info'>상상을 구현하는</h2></Fade>
+                  <Fade top duration={2000} delay={1000}>
+                  <h2 className='info'>상상을 구현하는</h2>
+                  </Fade>
+                  <Flip top duration={1000} delay={2000}>
                   <h2 className='info-name'>
                     <span>지정호</span> 입니다.
                   </h2>
+                  </Flip>
+                  <Fade bottom duration={2000} delay={1000}>
                   <div className='info-subtitle'>
                     <span>프론트앤드 개발자를 목표로 노력하고 있습니다.</span>
                     <span>부족한 부분을 하나씩 채워가는 재미를 즐깁니다.</span>
                     <span>: 인생을 긍정적으로 살아가자라는 좌우명을 가지고 있습니다.</span>
                   </div>
+                  </Fade>
               </div>
               <div className="down-arrow">
                 <img src="./img/56747.png" alt="" />
@@ -203,32 +186,33 @@ export default function MainComponent () {
         </section>
         <section id="section2" className='main-content'>
           <aside className='sec2-aside'>
+            <Fade fraction={0.5}>
             <nav className='menu-bar'>
               <ul className="nav-main-title">
                 <li><a href="#!" onClick={(e) => onClickmenu(e, 0)}>Home</a></li>
                 <li>
-                  <a href='#!' className={navAboutme} onClick={(e) => onClickmenu(e, 799)}>ABOUT ME</a>
+                  <a href='#!' className={isNavAboutme ? 'nav-title-btn' : ''} onClick={(e) => onClickmenu(e, 799)}>ABOUT ME</a>
                   <div className="project-submenu">
                     <ul>
-                      <li><a href="#!" className={navEducation} onClick={(e) => onClickmenu(e, 858)}>- Education</a></li>
-                      <li><a href="#!" className={navWork} onClick={(e) => onClickmenu(e, 1653)}>- Work experience</a></li>
-                      <li><a href="#!" className={navInterView} onClick={(e) => onClickmenu(e, 2508)}>- Self InterView</a></li>
+                      <li><a href="#!" className={isNavEducation ? 'nav-subtitle-btn' : ''} onClick={(e) => onClickmenu(e, 858)}>- Education</a></li>
+                      <li><a href="#!" className={isNavWork ? 'nav-subtitle-btn' : ''} onClick={(e) => onClickmenu(e, 1653)}>- Work experience</a></li>
                     </ul>
                   </div>
                 </li>
-                <li><a href='#!' className={navSkill} onClick={(e) => onClickmenu(e, 3698)}>SKILLS</a></li>
+                <li><a href='#!' className={isNavSkill ? 'nav-title-btn' : ''} onClick={(e) => onClickmenu(e, 2398)}>SKILLS</a></li>
                 <li>
-                  <a href='#!' className={navProject} onClick={(e) => onClickmenu(e, 4387)}>PROJECT</a>
+                  <a href='#!' className={isNavProject ? 'nav-title-btn' : ''} onClick={(e) => onClickmenu(e, 3152)}>PROJECT</a>
                   <div className='project-submenu'>
                     <ul>
-                      <li><a href="#!" className={navKurlyTeam} onClick={(e) => onClickmenu(e, 4487)}>- Kurly Team Project</a></li>
-                      <li><a href="#!" className={navKurlyReact} onClick={(e) => onClickmenu(e, 5187)}>- Kurly 개인 Porject</a></li>
-                      <li><a href="#!" className={navMyPage} onClick={(e) => onClickmenu(e, 5783)}>- 나의 포트폴리오 개발</a></li>
+                      <li><a href="#!" className={isNavKurlyTeam ? 'nav-subtitle-btn' : ''} onClick={(e) => onClickmenu(e, 3152)}>- Kurly Team Project</a></li>
+                      <li><a href="#!" className={isNavKurlyReact ? 'nav-subtitle-btn' : ''} onClick={(e) => onClickmenu(e, 3888)}>- Kurly 개인 Porject</a></li>
+                      <li><a href="#!" className={isNavMyPage ? 'nav-subtitle-btn' : ''} onClick={(e) => onClickmenu(e, 4487)}>- 나의 포트폴리오 개발</a></li>
                     </ul>
                   </div>
                 </li>
               </ul>
             </nav>
+            </Fade>
           </aside>
           <article className='sec2-article'>
             <div className="main-title">
@@ -296,7 +280,7 @@ export default function MainComponent () {
                 <h1>카카오게임즈 - 모바일 운영팀 (2020.06.23 ~ 2022.06.21)</h1>
                 <h2>- 게임에 대한 유저의 니즈를 파악하여 더 나은 환경에서 게임을 할 수 있도록 서비스를 제공</h2>
                 <ul> 
-                  <li>원활한 게임 환경을 제공하기 위해 <span>유저 동향 실시간 모니터링</span></li>
+                  <li>원활한 게임 환경을 제공하기 위해 유저 동향 실시간 모니터링</li>
                   <li>일일 데이터 관리 및 유저 관리</li>
                   <li>장애, 점검 히스토리 기록 및 게임 이슈 상황 수집</li>
                   <li>민감한 동향, 이슈사항을 수집하여 그래프로 시각화</li>
@@ -308,63 +292,6 @@ export default function MainComponent () {
                   <li>이벤트 및 점검 공지사항 작성</li>
                   <li>공식 카페 활성화를 위한 게시글 댓글 기획안 작성</li>
                 </ul>
-              </div>
-            </div>
-            <div className="interview-main-title">
-              <h1>#SELF INTERVIEW</h1>
-            </div>
-            <div className="interview-box">
-              <div className="row-1">
-                <div className="interview-sub-title-0102">
-                  <h2 className="interview-0102"><img src="./img/q.png" alt="" />개발자가 되고 싶은 이유</h2>
-                  <div className="content-box">
-                    <p className='content'>
-                      10년뒤의 제 모습을 떠올렸을때 지금보다 열정이 좀 식어있을지라도 여전히 타오르는 모습이기를 원했습니다. 그러기 위해서 현재 상황에 안주하지 않고,
-                      도태되지 않기 위한 발전과 그 발전을 뒷받침해줄 노력만이 정답이라고 생각했습니다. <br/><br/> 이런 생각을 하던 중 우연한 계기로 프론트엔드를 알게되었고, '사용자가 가장 먼저 보는곳' 이라는 프론트엔드 업무에 흥미를 느꼈고,
-                      이후 지속적으로 관심을 가지게 되었습니다. <br/> 가장 큰 흥미를 느낀건 내가 상상해왔던 것들을 눈에 보이게 만들수 있고, 정적인 페이지를 구현하고, 동적인 기능을 추가하면서 웹 페이지를 만드는 방법을 알아가는게 너무 재미있었습니다. 개발이야말로
-                      무한한 발전 가능성을 보았고, 꾸준한 노력을 통해 저의 미래를 현재보다 빛나게 할 수 있는 일이란걸 확신했습니다. 이러한 이유로 개발자를 목표로 제 2의 인생을 시작하게 되었습니다.
-                    </p>
-                  </div>
-                </div>
-                <div className="interview-sub-title-0102">
-                  <h2 className="interview-0102"><img src="./img/q.png" alt="" />개발자가 되기 위한 노력</h2>
-                  <div className="content-box">
-                    <p className='content'>
-                      회사를 그만 두기 전에는 쉬는날에도 프론트엔드에 관한 내용을 찾아보거나 HTML, CSS, JavaScript에 대한 인터넷 강의를 수강했고, 서점에서 웹 개발자에 대한 책을 사서 공부를 했습니다. 그러던중 웹 개발에 대해
-                      전문적으로 배우고 싶다는 생각을 했고, 이 후 회사를 그만두고 학원 수강을 했습니다. <br/><br/> 학원에선 웹개발의 심화과정을 배웠으며 부족한 부분들은 강사님께 질문을 하거나 개발 커뮤니티, 인터넷 검색, 유튜브 등을 통해  
-                      하나씩 배워갔습니다. 코드를 외우려고 하지 않고 최대한 이해하려고 노력했으며, 이해가 되지 않는 부분은 쉬운 예시를 따로 만들면서 반복 작업을 했습니다. 이러한 과정에서 몇개의
-                      홈페이지를 제작했으며, 여러명이서 개발하는 경험도 느껴보고 싶어 직접 스터디를 구성해서 팀 프로젝트를 개발했습니다. <br/><br/>
-                      많은 사람들이 요즘은 개발하기 쉬워졌다고 말하지만 저는 반은 맞고 반은 틀리다고 생각합니다. 개발하는데 도움을 주는 영상 및 교재가 잘되있는건 사실이지만, 중요한건 본인이 개발에 대한 노력과 열정의 크기라고 생각합니다.
-                      그렇기에 저는 오늘도 개발자가 되기 위해 노력하고 있습니다.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="row-2">
-                <div className="interview-sub-title-0304">
-                  <h2 className="interview-0304"><img src="./img/q.png" alt="" className='q-img' />원활한 의사소통과 협업능력을 갖춘 인재</h2>
-                  <div className="content-box">
-                    <p className='content'>
-                    개발자에게 커뮤니케이션과 협업 능력은 필수라고 생각합니다. 프론트엔드 업무를 하다보면 기획자, 디자이너, 백엔드 개발자와 기본적으로 소통을 하게 될텐데 의사소통이 제대로 이루어지지 않는다면 저뿐만 아니라 같이 협업하는 사람과 트러블이 발생할거라 생각합니다. <br/><br/>
-                    저는 이러한 트러블이 발생하는걸 조금이라도 줄일 수 있는 경험을 해왔습니다. 카카오게임즈 모바일 운영팀에 있을 때 근무 교대를 하기 전 근무했을때까지 각 게임별 크리티컬한 이슈에 대한 정리와 이후 유저들의 동향 및 주의깊게 봐야할 상황을 정리해 두어 다음 교대자에게 자세하게 전달해주었습니다.
-                    이 행동으로 인해 다음 근무자는 훨씬 빨리 게임에 대한 이슈 사항들을 파악할 수 있었으며, 정리해놓은 중요 사항을 토대로 근무하여 해당 이슈 및 다른 이슈에 대해 즉각적인 반응을 할 수 있었습니다. <br/><br/> 그 외에 팀장님과의 1:1 면담을 통한 분석서 보고, 동료들과의 업무 메뉴얼을 리뉴얼 했던 경험 등 이 외에도 많은 사람들과의 능동적인 의사소통의 경험이 있습니다.
-                    능동적인 의사소통이 이번에 팀 프로젝트를 하면서 많은 도움이 되었습니다. 주도적으로 팀을 이끌었고, 각자의 의견을 조율하여 좋은 분위기로 프로젝트를 진행하다 보니 팀 프로젝트 이후 개인 프로젝트를 진행할때도 서로 도움을 주면서 진행할 수 있었습니다.
-                    </p>
-                  </div>
-                </div>
-                <div className="interview-sub-title-0304">
-                  <h2 className="interview-0304"><img src="./img/q.png" alt="" />앞으로의 포부</h2>
-                  <div className="content-box">
-                    <p className='content'>
-                    프론트엔드 개발 직무는 고객이 보는 모든 것을 개발하는 직무입니다. 즉 고객이 가장 먼저 보는 부분을 담당하므로 회사의 첫 인상을 만드는 것이라 생각합니다. 저는 이러한 업무가 굉장히 매력적이라 생각하며 고객의 반응을 보고 즉각 반영하는 개발팀에 이바지 할 수 있는 핵심 구성원이 되고 싶습니다.<br/><br/>
-                    디바이스와 브라우저는 점점 더 다양해지고 있고 이에 맞는 웹 환경을 고객들에게 제공해주기 위해 저는 프론트엔드 개발자로서 고객과 회사를 이어주는 믿음직한 중간다리 역할을 할 것입니다.
-                    프론트엔드 개발 분야는 다른 분야에 비해 트렌드가 빠릅니다. 이에 뒤처지지 않게 저는 하나의 기술을 익혔다고 해서 그 기술에 계속 안주하지 않고 새로운 기술과 트렌드를 꾸준하게 익히도록 노력할 것입니다.
-                    끊임없는 학습을 통해 사용자 인터페이스와 사용자 경험을 기술적으로 정확하게 구현할 수 있도록 항상 노력하고 사용자의 입장에서 생각하겠습니다.<br/><br/>
-                    저는 앞으로 온라인 비즈니스의 확장이 더 심해질 것이라 생각합니다. 때문에 고객들은 점점 온라인 웹사이트를 점점 많이 접할 것이고 이에 따라 프론트엔드 개발 직무는 비전이 있다고 생각합니다.
-                    새로운 기술을 배우고 익히는 것을 좋아하는 저에게 있어 회사의 프론트엔드 개발 직무는 역량을 발휘하며 함께 성장해나갈 수 있는 가장 적합한 직무라고 확신합니다.
-                    </p>
-                  </div>
-                </div>
               </div>
             </div>
             <div className="skill-main-title">
@@ -425,7 +352,7 @@ export default function MainComponent () {
               </div>            
               <div className={dbTextui ? "content-box db on" : "content-box db"} onClick={onClickToggleDb}>
                 <p className='content-title'>DataBase</p>
-                <img src="./img/db.png" alt="db-skills-img" />
+                <img src="./img/mysql.png" alt="db-skills-img" />
                 <div className="click-ui-container">
                   <div className="click-ui-content">
                     <h2>MySQL</h2>
@@ -440,14 +367,14 @@ export default function MainComponent () {
               </div>            
               <div className={collaborationTextui ? "content-box collaboration on" : "content-box collaboration"} onClick={onClickToggleCollaboration}>
                 <p className='content-title'>GitHub, Git</p>
-                <img src="./img/collaboration.png" alt="collaboration-skills-img" />
+                <img src="./img/github.png" alt="collaboration-skills-img" />
                 <div className="click-ui-container">
                   <div className="click-ui-content">
                     <h2>GitHub, Git</h2>
                     <div className="detail-box">
                       <p>
                         - GitHub를 통한 레포지토리 관리 <br/>
-                        - Git bash를 이용하여 홈페이지 배포 가능 <br/>
+                        - Git 명령어를 사용하여 홈페이지 배포 가능 <br/>
                         - Git, Node.js를 통한 빌드 가능
                       </p>
                     </div>

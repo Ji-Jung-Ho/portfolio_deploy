@@ -48,7 +48,7 @@ export default function KurlyTeamProject () {
               </p>
               <ul>
                 <li>&nbsp;애니메이션과 슬라이드로 구성된 메인 페이지</li>
-                <li>&nbsp;4개의 테마(신상품, 베스트, 알뜰쇼핑, 특가/혜택)로 나뉘어져 있는 상품 소개 페이지</li>
+                <li>&nbsp;4개의 테마(<span>신상품</span>, <span>베스트</span>, <span>알뜰쇼핑</span>, <span>특가/혜택</span>)로 나뉘어져 있는 상품 소개 페이지</li>
                 <li>&nbsp;회원가입 페이지와 DB와 연동하여 회원가입 기능 구현</li>
               </ul>
             </div>

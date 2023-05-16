@@ -4,7 +4,7 @@ html {
     overflow-y: auto; /* scroll-behavior: smooth; */
 }
 body {
-    font: normal  14px/1  'NEXON Lv2 Gothic Bold', '나눔고딕', 'Montserrat','Roboto';
+    font: normal  14px/1  'Noto Sans Korean', '나눔고딕', 'Montserrat','Roboto';
     /* color: #000; */
     /* background-color: #202224; */
     /* background-color: rgb(245,245,245); */

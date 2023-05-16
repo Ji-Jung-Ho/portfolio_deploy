@@ -23,6 +23,7 @@
   padding: 20px 0;
   height: 100%;
   background-color: #202224;
+  font-family: "Black Han Sans";
 }
 #main #section1 .sec1-aside .menu-bar .main-title {
   display: flex;
@@ -173,13 +174,13 @@
 #main #section2 .sec2-aside {
   display: flex;
   flex-basis: 20%;
-  height: 100%;
+  height: 100vh;
   flex-grow: 0;
   align-items: center;
   justify-content: space-between;
   flex-direction: column;
   padding: 70px 0;
-  background-color: #032431;
+  background-color: #31333B;
   position: sticky;
   top: 0;
 }
@@ -193,6 +194,7 @@
   justify-content: space-around;
   flex-direction: column;
   transition: all 0.3s;
+  font-family: "Black Han Sans";
 }
 #main #section2 .sec2-aside .menu-bar .nav-main-title > li {
   text-align: center;
@@ -231,17 +233,18 @@
   margin-top: 30px;
 }
 #main #section2 .sec2-aside .menu-bar .nav-main-title > li .project-submenu ul li a {
-  font-size: 15px;
+  font-size: 17px;
+  font-weight: 700;
 }
 #main #section2 .sec2-aside .menu-bar .nav-main-title > li .project-submenu ul li a.nav-subtitle-btn {
-  color: #f8cd07;
+  color: #ffc98e;
 }
 #main #section2 .sec2-article {
   flex-basis: 80%;
   flex-grow: 0;
   overflow: hidden;
   padding: 40px 40px 0 40px;
-  background-color: #fff;
+  background-color: #FDF8F2;
 }
 #main #section2 .sec2-article .main-title {
   width: 180px;
@@ -254,6 +257,7 @@
   left: 53%;
   background-color: #8dbdee;
   border-radius: 20px;
+  font-family: "Black Han Sans";
 }
 #main #section2 .sec2-article .main-title h2 {
   font-size: 30px;
@@ -264,6 +268,7 @@
   display: flex;
   border-radius: 5px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: #fff;
 }
 #main #section2 .sec2-article .about-row-box .about-me {
   width: 100%;
@@ -348,6 +353,7 @@
 }
 #main #section2 .sec2-article .education .edcation-main-title {
   padding: 50px 0;
+  font-family: "Black Han Sans";
 }
 #main #section2 .sec2-article .education .edcation-main-title h2 {
   font-size: 50px;
@@ -361,6 +367,7 @@
   padding-left: 20px;
   border-radius: 5px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: #fff;
 }
 #main #section2 .sec2-article .education .education-content .education-school {
   width: 100%;
@@ -402,6 +409,7 @@
 }
 #main #section2 .sec2-article .work-experience .work-experience-main-title {
   padding: 50px 0;
+  font-family: "Black Han Sans";
 }
 #main #section2 .sec2-article .work-experience .work-experience-main-title h2 {
   font-size: 50px;
@@ -414,6 +422,7 @@
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: #fff;
 }
 #main #section2 .sec2-article .work-experience .work-experience-content h1 {
   font-size: 30px;
@@ -436,119 +445,6 @@
 #main #section2 .sec2-article .work-experience .work-experience-content ul li > h2 {
   font-size: 50px;
 }
-#main #section2 .sec2-article .work-experience .work-experience-content ul li span {
-  text-decoration: underline;
-  text-underline-offset: 7px;
-}
-#main #section2 .sec2-article .interview-main-title {
-  width: 100%;
-  padding: 50px 0;
-}
-#main #section2 .sec2-article .interview-main-title h1 {
-  font-size: 50px;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 7px;
-  text-align: center;
-}
-#main #section2 .sec2-article .interview-box {
-  width: 100%;
-  padding-bottom: 70px;
-  border-bottom: 1px solid #000;
-}
-#main #section2 .sec2-article .interview-box .row-1 {
-  position: relative;
-  display: flex;
-  width: 100%;
-  padding: 50px 0;
-}
-#main #section2 .sec2-article .interview-box .row-1::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  top: 100%;
-  background-color: #000;
-}
-#main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 {
-  width: 50%;
-  padding: 0 10px;
-}
-#main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 .interview-0102 {
-  display: block;
-  width: 545px;
-  height: 50px;
-  margin: 0 0 10px 10px;
-  font-size: 28px;
-  color: #202224;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 7px;
-}
-#main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 .interview-0102 > img {
-  width: 30px;
-  margin: 0 10px 5px 0;
-}
-#main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 .content-box {
-  height: 400px;
-  padding: 0px 20px;
-  overflow-y: auto;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  border-radius: 5px;
-}
-#main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 .content-box::-webkit-scrollbar {
-  width: 10px;
-}
-#main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 .content-box::-webkit-scrollbar-thumb {
-  background: #424242;
-  border-radius: 10px;
-}
-#main #section2 .sec2-article .interview-box .row-1 .interview-sub-title-0102 .content-box .content {
-  line-height: 200%;
-  font-size: 20px;
-  color: #000;
-}
-#main #section2 .sec2-article .interview-box .row-2 {
-  display: flex;
-  width: 100%;
-}
-#main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 {
-  width: 50%;
-  padding: 0 10px;
-}
-#main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 .interview-0304 {
-  display: block;
-  width: 545px;
-  height: 50px;
-  margin: 45px 0 10px 10px;
-  font-size: 28px;
-  color: #202224;
-  font-weight: 700;
-  text-decoration: underline;
-  text-underline-offset: 7px;
-}
-#main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 .interview-0304 > img {
-  width: 30px;
-  margin: 0 10px 5px 0;
-}
-#main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 .content-box {
-  height: 400px;
-  padding: 10px 20px 0px 20px;
-  overflow-y: auto;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  border-radius: 5px;
-}
-#main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 .content-box::-webkit-scrollbar {
-  width: 10px;
-}
-#main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 .content-box::-webkit-scrollbar-thumb {
-  background: #424242;
-  border-radius: 10px;
-}
-#main #section2 .sec2-article .interview-box .row-2 .interview-sub-title-0304 .content-box .content {
-  line-height: 200%;
-  font-size: 20px;
-}
 #main #section2 .sec2-article .skill-main-title {
   width: 180px;
   height: 50px;
@@ -556,10 +452,11 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 51.4%;
+  top: 37.3%;
   left: 53%;
   background-color: #8dbdee;
   border-radius: 20px;
+  font-family: "Black Han Sans";
 }
 #main #section2 .sec2-article .skill-main-title h2 {
   font-size: 30px;
@@ -582,6 +479,7 @@
   margin: 0 10px;
   position: relative;
   transition: all 0.2s;
+  background-color: #fff;
 }
 #main #section2 .sec2-article .skill-content .content-box:hover {
   transform: translateY(30px);
@@ -651,10 +549,11 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 63.5%;
+  top: 52.9%;
   left: 53%;
   background-color: #8dbdee;
   border-radius: 20px;
+  font-family: "Black Han Sans";
 }
 #main #section2 .sec2-article .project-main-title h2 {
   font-size: 30px;
@@ -676,6 +575,7 @@
 #main #section2 .sec2-article .project-content .content-01 .content-title {
   width: 100%;
   padding-bottom: 30px;
+  font-family: "Black Han Sans";
 }
 #main #section2 .sec2-article .project-content .content-01 .content-title h2 {
   font-size: 50px;
@@ -835,6 +735,7 @@
 #main #section2 .sec2-article .project-content .content-02 .content-title {
   width: 100%;
   padding-bottom: 30px;
+  font-family: "Black Han Sans";
 }
 #main #section2 .sec2-article .project-content .content-02 .content-title h2 {
   font-size: 40px;
@@ -1000,6 +901,7 @@
 #main #section2 .sec2-article .project-content .content-03 .content-title {
   width: 100%;
   padding-bottom: 30px;
+  font-family: "Black Han Sans";
 }
 #main #section2 .sec2-article .project-content .content-03 .content-title h2 {
   font-size: 40px;
@@ -1079,7 +981,7 @@
   justify-content: center;
   align-items: center;
   height: 220px;
-  background-color: #fff;
+  background-color: #FDF8F2;
   position: relative;
 }
 #main .footer h2 {

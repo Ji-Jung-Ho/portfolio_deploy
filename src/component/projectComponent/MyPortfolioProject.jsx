@@ -46,7 +46,7 @@ export default function MyPortfolioProject () {
               <p className='explanation'>저에 대한 간단한 소개와 기술 스택, 개발한 Project를 소개하는 홈페이지 입니다. 다양한 라이브러리를 사용하여 기능을 구현했습니다.<br /></p>
               <p>포트폴리오 웹페이지에서 구현한 핵심 기능은 <span>3가지</span>입니다.</p>
               <ul>
-                <li>&nbsp;React-reveal을 사용하여 다양한 애니메이션 구현</li>
+                <li>&nbsp;React-reveal을 사용한 애니메이션 구현</li>
                 <li>&nbsp;JavaScript로 구현한 스크롤 이벤트</li>
                 <li>&nbsp;Swiper를 사용하여 구현한 슬라이드 및 페이지네이션, 네비게이션 커스터마이징</li>
               </ul>
@@ -70,17 +70,10 @@ export default function MyPortfolioProject () {
             </div>
             <div className="experience">
               <h2 className='experience-main-title'>❗성장 경험</h2>
-              <h2 className='sub-title'><span>React로 만든 웹페이지</span></h2>
-              <p>
-                컬리 프로젝트를 진행 할때 리액트로 웹페이지를 만들었는데 그때의 리액트 사용법은 학원에서 배운점을 중점으로 사용해서 제작했다면, 이 웹페이지는
-                학원에서 배운것과 스스로 찾아서 만든 웹페이지입니다. 최상위 컴포넌트에서 각각의 컴포넌트가 랜더링 되는 방식으로 구현했으며, 
-                
-              </p>
               <h2 className='sub-title'><span>다양한 JavaScript 라이브러리의 사용</span></h2>
               <p>
                 이 웹페이지를 제작하면서 많은 라이브러리의 사용방법을 배웠습니다. 간단하게 슬라이드를 만들어주는 Swiper, 애니메이션을 효과적으로 만들어주는 React-reveal
-                , SPA에서 페이지 전환을 구현하기 위해 React-Router 사용했습니다. 순수 자바스크립트로 구현할 수도 있지만, 라이브러리를 사용 방법을 알고 싶어 라이브러리를
-                통해서 이미지 슬라이드, 애니메이션 효과, 페이지 전환을 구현하게 되었습니다.
+                , SPA에서 페이지 전환을 구현하기 위해 React-Router을 사용했습니다. 다양한 라이브러리를 통해서 이미지 슬라이드, 애니메이션 효과, 페이지 전환을 구현하게 되었습니다.
               </p>
             </div>
           </div>
