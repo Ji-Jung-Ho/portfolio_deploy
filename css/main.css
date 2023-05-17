@@ -192,6 +192,7 @@
 }
 #main #section2 .sec2-aside .menu-bar {
   display: flex;
+  height: 100%;
 }
 #main #section2 .sec2-aside .menu-bar .nav-main-title {
   width: 100%;
@@ -457,7 +458,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 37.3%;
+  top: 36.5%;
   left: 53%;
   background-color: #8dbdee;
   border-radius: 20px;
@@ -554,7 +555,7 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  top: 52.9%;
+  top: 54.8%;
   left: 53%;
   background-color: #8dbdee;
   border-radius: 20px;
