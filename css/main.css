@@ -3,17 +3,21 @@
 }
 #main #section1 {
   width: 100%;
+  height: 100vh;
   position: relative;
   display: flex;
   background-color: #202224;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  overflow: hidden;
 }
 #main #section1 .sec1-aside {
-  width: 20vw;
+  width: 25vw;
+  height: 100%;
   position: relative;
+  z-index: 10;
+  background-color: #202224;
 }
 #main #section1 .sec1-aside .menu-bar {
   display: flex;
@@ -90,23 +94,28 @@
   color: #8dbdee;
 }
 #main #section1 .sec1-article {
-  width: 80vw;
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
   position: relative;
 }
 #main #section1 .sec1-article .img-box {
-  width: 100%;
-  opacity: 0.4;
-  height: 100vh;
-  background: url(../img/jungho_bgimg.jpg) no-repeat 50% 100%;
-  background-size: cover;
   position: fixed;
+  left: 20%;
+  top: 0px;
+  opacity: 0.5;
+  width: 100vw;
+}
+#main #section1 .sec1-article .img-box img {
+  width: 80vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 #main #section1 .sec1-article .main-title {
   color: #fff;
-  position: absolute;
-  top: 23%;
-  left: 18%;
 }
 #main #section1 .sec1-article .main-title .info-subtitle {
   display: flex;
