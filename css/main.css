@@ -567,7 +567,7 @@
 }
 #main #section2 .sec2-article .project-content .content-01 .content-title {
   width: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   font-family: "Black Han Sans";
 }
 #main #section2 .sec2-article .project-content .content-01 .content-title h2 {
@@ -628,7 +628,7 @@
 }
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container .swiper-slide img {
   width: 100%;
-  height: 465px;
+  height: 400px;
 }
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 .swiper-container .swiper-pagination-01 {
   display: flex;
@@ -663,7 +663,7 @@
 }
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 .info > p {
   font-size: 18px;
-  padding: 40px 0 50px 0;
+  padding-bottom: 20px;
   line-height: 150%;
   border-bottom: 2px solid #000;
 }
@@ -673,7 +673,7 @@
 }
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 .info .development-info {
   width: 100%;
-  padding: 20px 0 23px 0;
+  padding: 25px 0 25px 0;
   border-bottom: 2px solid #000;
 }
 #main #section2 .sec2-article .project-content .content-01 .project-info-01 .info .development-info .detail {
@@ -727,7 +727,7 @@
 }
 #main #section2 .sec2-article .project-content .content-02 .content-title {
   width: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   font-family: "Black Han Sans";
 }
 #main #section2 .sec2-article .project-content .content-02 .content-title h2 {
@@ -749,6 +749,10 @@
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container:hover > button {
   opacity: 1;
+}
+#main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container > img {
+  width: 100%;
+  height: 100%;
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container > button {
   border: 0;
@@ -785,7 +789,7 @@
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container .swiper-slide img {
   width: 100%;
-  height: 465px;
+  height: 400px;
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .swiper-container .swiper-pagination-02 {
   display: flex;
@@ -820,7 +824,7 @@
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .info > p {
   font-size: 18px;
-  padding: 40px 0 50px 0;
+  padding-bottom: 20px;
   line-height: 150%;
   border-bottom: 2px solid #000;
 }
@@ -830,7 +834,7 @@
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .info .development-info {
   width: 100%;
-  padding: 20px 0 23px 0;
+  padding: 25px 0 25px 0;
   border-bottom: 2px solid #000;
 }
 #main #section2 .sec2-article .project-content .content-02 .project-info-02 .info .development-info .detail {
@@ -885,7 +889,7 @@
 }
 #main #section2 .sec2-article .project-content .content-03 .content-title {
   width: 100%;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
   font-family: "Black Han Sans";
 }
 #main #section2 .sec2-article .project-content .content-03 .content-title h2 {
