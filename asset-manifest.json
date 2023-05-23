@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/portfolio_deploy/static/css/main.b7cc4f0f.css",
-    "main.js": "/portfolio_deploy/static/js/main.17e55956.js",
+    "main.css": "/portfolio_deploy/static/css/main.f3ae4921.css",
+    "main.js": "/portfolio_deploy/static/js/main.5b8afa5d.js",
     "static/media/KakaoTalk_20230504_164306022.jpg": "/portfolio_deploy/static/media/KakaoTalk_20230504_164306022.fc64013e4d366ccacea5.jpg",
+    "static/media/jungho_bgimg.jpg": "/portfolio_deploy/static/media/jungho_bgimg.8071b3eab562284dd79e.jpg",
     "static/media/kurly_banner.jpg": "/portfolio_deploy/static/media/kurly_banner.2e43ad4c550eb5bf4472.jpg",
     "index.html": "/portfolio_deploy/index.html",
-    "main.b7cc4f0f.css.map": "/portfolio_deploy/static/css/main.b7cc4f0f.css.map",
-    "main.17e55956.js.map": "/portfolio_deploy/static/js/main.17e55956.js.map"
+    "main.f3ae4921.css.map": "/portfolio_deploy/static/css/main.f3ae4921.css.map",
+    "main.5b8afa5d.js.map": "/portfolio_deploy/static/js/main.5b8afa5d.js.map"
   },
   "entrypoints": [
-    "static/css/main.b7cc4f0f.css",
-    "static/js/main.17e55956.js"
+    "static/css/main.f3ae4921.css",
+    "static/js/main.5b8afa5d.js"
   ]
 }
